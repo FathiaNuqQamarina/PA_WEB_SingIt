@@ -60,29 +60,22 @@
 <body >
     <div class = "container">
         <div class = "daftar" >
-            <h2>REGISTRATION</h2>
-            <div class ="form">
-                <form action=""method="POST">
-                    <div class = "bungkus">
-                        <div>
-                            <label for="">Nama</label>
-                            <input type="text" name="nama" required>
-                        </div>
-                        <div>
-                            <label for="">Username</label>
-                            <input type="text" name="username" required>
-                        </div>
-                        <div>
-                            <label for="">Password</label>
-                            <input type="password" name="password" required>
-                        </div>
-                        <div>
-                            <label for="">Ulangi Password</label>
-                            <input type="password" name="password_com" required>
-                        </div>
-                        <button type="submit" name="daftar"><b>Daftar</b></button>
-                    </div>
-                </form>
+        <p class="daftar-text" style="font-size: 2rem; font-weight: 800;">Register</p>                <div class ="bungkus">
+            <form action=""method="POST" class="daftar-user">
+                <div class="input-group">
+                    <input type="text" name="nama" placeholder="Nama" required>
+                </div>
+                <div class="input-group">
+                    <input type="text" name="username" placeholder="Username" required>
+                </div>
+                <div class="input-group">
+                    <input type="password" name="password" placeholder="Password" required>
+                </div>
+                <div class="input-group">
+                    <input type="password" name="password_com" placeholder="Confirmasi Password" required>
+                </div>
+                <button type="submit" name="daftar" class="btn" ><b>Daftar</b></button>
+            </form>
             </div>
         </div>
         <div class = "login">
