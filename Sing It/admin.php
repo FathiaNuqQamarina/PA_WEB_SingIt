@@ -8,30 +8,26 @@
         $artis = $_POST['artis'];
         $judul = $_POST['judul'];
         $link = $_POST['link'];
-        $gambar = $_POST['foto'];
         $tanggal= date('Y:m:d');
         
-        $format_file = $_FILES['foto']['name'];
-        $tmp_name = $_FILES['foto']['tmp_name'];
-        $size = $_FILES['foto']['size'];
-        $tipe = explode('.',$format_file);
-        $tipe2 = $tipe[1];
-        $rename = time() . '.' . $tipe2;
-        $format_yang_diizinkan = array('jpg','png','jpeg');
-        $max_size = 1000000;
+        $gambar = $_FILES['foto']['name'];
+        $x = explode('.', $gambar);
+        $ekstensi = strtolower(end($x));
+
+        $gambar_baru = "$judul.$ekstensi";
+        $tmp = $_FILES['foto']['tmp_name'];
         
-        if(in_array($tipe2, $format_yang_diizinkan) === true){
-            if($size < $max_size){
-                move_uploaded_file($tmp_name, './file-foto/' . $rename);
-                $sql_upload = mysqli_query($conn_log,"INSERT INTO `playlist`(`Penyanyi`, `Lagu`, `Link`,`Gambar`,`Tanggal`) VALUES ('".$artis."','".$judul."','".$link."','".$rename."','".$tanggal."')");
-                if($sql_upload){
-                    echo '<script language = "javascript">
-                    alert("Data Berhasil Di Input") </script>';    
-                }
-                else{
-                    echo '<script language = "javascript">
-                    alert("Data Gagal Di Input") </script>' ;    
-                }
+        
+        if(move_uploaded_file($tmp, './file-foto/' . $gambar_baru)){
+            
+            $sql_upload = mysqli_query($conn_log,"INSERT INTO `playlist`(`Penyanyi`, `Lagu`, `Link`,`Gambar`,`Tanggal`) VALUES ('".$artis."','".$judul."','".$link."','".$gambar_baru."','".$tanggal."')");
+            if($sql_upload){
+                echo '<script language = "javascript">
+                alert("Data Berhasil Di Input") </script>';    
+            }
+            else{
+                echo '<script language = "javascript">
+                alert("Data Gagal Di Input") </script>' ;    
             }
         }
     }
