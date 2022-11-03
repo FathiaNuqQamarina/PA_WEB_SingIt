@@ -7,7 +7,6 @@
     if(isset($_POST['submit'])){
         $artis = $_POST['artis'];
         $judul = $_POST['judul'];
-        $link = $_POST['link'];
         $tanggal= date('Y:m:d');
         
         $gambar = $_FILES['foto']['name'];
@@ -16,11 +15,18 @@
 
         $gambar_baru = "$judul.$ekstensi";
         $tmp = $_FILES['foto']['tmp_name'];
+
+        $lagu = $_FILES['lagu']['name'];
+        $x = explode('.', $lagu);
+        $ekstensi = strtolower(end($x));
+
+        $lagu_baru = "$judul.$ekstensi";
+        $tmplagu = $_FILES['lagu']['tmp_name'];
         
         
-        if(move_uploaded_file($tmp, './file-foto/' . $gambar_baru)){
+        if(move_uploaded_file($tmp, './file/' . $gambar_baru) & move_uploaded_file($tmplagu, './file/' . $lagu_baru)){
             
-            $sql_upload = mysqli_query($conn_log,"INSERT INTO `playlist`(`Penyanyi`, `Lagu`, `Link`,`Gambar`,`Tanggal`) VALUES ('".$artis."','".$judul."','".$link."','".$gambar_baru."','".$tanggal."')");
+            $sql_upload = mysqli_query($conn_log,"INSERT INTO `playlist`(`Penyanyi`, `Lagu`, `File`,`Gambar`,`Tanggal`) VALUES ('".$artis."','".$judul."','".$lagu_baru."','".$gambar_baru."','".$tanggal."')");
             if($sql_upload){
                 echo '<script language = "javascript">
                 alert("Data Berhasil Di Input") </script>';    
@@ -76,8 +82,8 @@
                         <input type="text" name="artis" required>   
                         <label for="">Judul</label>
                         <input type="text" name="judul" required>
-                        <label for="">Link</label>
-                        <input type="text" name="link" required>
+                        <label for="">File Lagu</label>
+                        <input type="file" name="lagu" required>
                         <label for="">Gambar</label>
                         <input type="file" name="foto" require>
                     </div>

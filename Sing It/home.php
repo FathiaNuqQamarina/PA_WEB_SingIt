@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SingIt</title>
-    <link rel="stylesheet" href="stylesheet/style.css?v2">
+    <link rel="stylesheet" href="stylesheet/style.css?v5">
         
 </head>
 <body >
@@ -90,7 +90,7 @@
                 </a>
             </div>
         </div>
-        <table >
+        <table>
             <tr>
                 <th>Artis</th>
                 <th>Judul</th>
@@ -107,14 +107,19 @@
             <tr>
                 <td><?php echo $row['Penyanyi'] ?></td>
                 <td><?php echo $row['Lagu'] ?></td>
-                <td><?php echo $row['Link'] ?></td>
-                <td><img src="file-foto/<?php echo $row['Gambar']?>" alt=""></td>
-                <td><Button>Tambah</Button></td>
+                <td><?php echo $row['File'] ?></td>
+                <td><img src="file/<?php echo $row['Gambar']?>" alt=""></td>
+                <td><Button>Tambah</Button>
+                <br>
+                <br>
+                <a href="play.php?id=<?=$row['id'];?>">
+                <Button>Play</Button>
+                </a>
+                </td>
             </tr>
             <?php }} ?>
         </table>
     </div>
-
     <div id="about">
         <div>
             <h1>AboutMe</h1>

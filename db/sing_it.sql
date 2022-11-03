@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 02, 2022 at 03:29 PM
+-- Generation Time: Nov 03, 2022 at 09:36 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -39,7 +39,8 @@ CREATE TABLE `login` (
 
 INSERT INTO `login` (`nama`, `username`, `password`) VALUES
 ('Deo', 'Yans123', 'Sims123'),
-('Admin1', 'Admin', 'Admin123');
+('Admin1', 'Admin', 'Admin123'),
+('Yanuar Gideon Simalango', 'yans', 'Simalango23');
 
 -- --------------------------------------------------------
 
@@ -51,10 +52,17 @@ CREATE TABLE `playlist` (
   `id` int(15) NOT NULL,
   `Penyanyi` varchar(20) NOT NULL,
   `Lagu` varchar(20) NOT NULL,
-  `Link` varchar(30) NOT NULL,
+  `File` varchar(30) NOT NULL,
   `Gambar` varchar(255) NOT NULL,
   `Tanggal` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `playlist`
+--
+
+INSERT INTO `playlist` (`id`, `Penyanyi`, `Lagu`, `File`, `Gambar`, `Tanggal`) VALUES
+(10, 'Hindia', 'Evaluasi', 'Evaluasi.mp3', 'Evaluasi.jpg', '2022:11:04');
 
 --
 -- Indexes for dumped tables
@@ -74,7 +82,7 @@ ALTER TABLE `playlist`
 -- AUTO_INCREMENT for table `playlist`
 --
 ALTER TABLE `playlist`
-  MODIFY `id` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
