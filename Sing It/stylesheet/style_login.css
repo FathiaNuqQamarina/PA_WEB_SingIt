@@ -28,20 +28,10 @@ body{
 }
 
 
-.container .daftar-text {
-    color: #111;
-    font-weight: 500;
-    font-size: 1.1rem;
-    text-align: center;
-    margin-bottom: 5px;
-    display: block;
-    text-transform: capitalize;
-}
-
 .daftar{
-    background-image: url(//external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.uKpZQXej8apwGFpVZuGFowHaLd%26pid%3DApi&f=1&ipt=5b8b7581e20e26ef25bd176ec7f2557856f3c8c500d681c328446305d7eae6e6&ipo=images);
+    background-image: url(https://img.freepik.com/free-photo/beautiful-brunette-woman-singing-microphone-isolated-gray-wall_231208-12884.jpg?w=740&t=st=1667491276~exp=1667491876~hmac=d8af76d6cb49364058f37a198e6fb0d353641d6b2ba8da85de371ca4a6b80e0d);
     background-size: cover;
-    background-position: center;
+    background-position: right;
     justify-content: space-evenly;
     display: flex;
     flex-direction: column;
@@ -50,18 +40,43 @@ body{
     width: 50%;
 }
 
-/* .container .daftar .bungkus {
+.login{
+    background-image: url(https://img.freepik.com/free-photo/singing-happy-caucasian-girl-s-portrait-dark-studio-background-neon-light-beautiful-female-model-with-speaker_155003-26150.jpg?w=740&t=st=1667491353~exp=1667491953~hmac=e8b04a4542f5a50efd11257d62feea44296c8cfeec88735f858d83a4aaa40c73);
+    background-size: cover;
+    background-position: left;
+    justify-content: space-evenly;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    width: 50%;
+}
+
+.daftar-text {
+    color: #111;
+    font-weight: 500;
+    font-size: 1.1rem;
+    text-align: center;
+    margin-bottom: 50px;
+    display: block;
+    text-transform: capitalize;
+}
+
+.bungkus {
     width: 400px;
     min-height: 400px;
     background: #FFF;
     border-radius: 5px;
-    box-shadow: 0 0 5px rgba(255, 0, 0, 0.3);
-    padding: 40px 30px;
-} */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    padding: 60px 30px;
+}
+
+
 .input-group{
     width: 100%;
     height: 50px;
     margin-bottom: 20px;
+    
 }
 
 .input-group input{
@@ -79,73 +94,6 @@ body{
     border-color: #152238;
 }
 
-.container .daftar .input-group .btn {
-    display: block;
-    width: 100%;
-    padding: 15px 20px;
-    text-align: center;
-    border: none;
-    background: #b48651;
-    outline: none;
-    border-radius: 30px;
-    font-size: 1.2rem;
-    color: #FFF;
-    cursor: pointer;
-    transition: .3s;
-}
-
-.login{
-    background-image: url(//external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpaperbat.com%2Fimg%2F465529-black-and-white-microphone-photography-4-the-art-mad.jpg&f=1&nofb=1&ipt=4df1fbaf2b113d0d30656bce3033e297918bb550b921571c81e50b322ba6e181&ipo=images);
-    background-size: cover;
-    background-position: center;
-    justify-content: space-evenly;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 100vh;
-    width: 50%;
-}
-/* 
-.form{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    border-radius: 10px;
-    height: 70%;
-    width: 70%;
-} 
-
-/* .bungkus{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.bungkus div{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-
-label{
-    color: var(--secondary);
-    font-weight: bold;
-    font-size: 21px;
-    font-family: 'Montserrat', sans-serif;
-}
-*/
-
-input{
-    border-radius: 10px;
-    height: 30px;
-    width: 250px;
-    font-size: 16px;
-}
 
 button{
     display: block;
