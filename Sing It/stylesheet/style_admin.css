@@ -310,5 +310,43 @@ a{
     height: 78vh;
     width: 100%;
     display: flex;
-    justify-content: center;
+    flex-direction: column;;
+    color: white;
+    margin-left: 50px;
+    margin-right: 10px;
+    background-image: url(https://img.freepik.com/free-photo/african-america…a315c7ea0e84e4fec929660ffcdd62e7da0f1b3f9c6471da5);
 }
+
+.head {
+    text-align: center;
+    /* border-bottom: 2px solid white; */
+}
+
+span{
+    color: red;
+}
+
+.box{
+    display: flex;
+    flex-direction: row; 
+    margin: 60px;
+    padding-left: 20px;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.user-box{
+    border: 5px solid black;
+    margin-right: 50px;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.lagu-box{
+    border: 5px solid black;
+    margin-right: 50px;
+    padding: 20px;
+    border-radius: 20px;
+}
+

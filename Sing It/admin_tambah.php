@@ -67,24 +67,27 @@
 
     </nav>
     <div class= "bungkus">
-        <h1 class = "head">DASHBOARD</h1>
-        <h3 >Selamat Datang,</h3><br>
-        <h2>Admin Sing<span> It<span></h2>
-        <div class="box">
-            <div class="user-box">
-            <br>
-            <h2>Data User</h2>
-            <br>
-            <img src="img/user.png" alt="user-icon" width=100px>
-            <a href="daftar_user.php">Lihat Daftar User</a>
-            </div>
-            <br>
-            <div class="lagu-box">
-            <br>
-            <h2>Data Lagu</h2>
-            <br>
-            <img src="img/musical-note.png" alt="song-icon" width=100px>
-            <a href="admin_lihat.php">Lihat Daftar Lagu</a>
+        <div class="containerplay">
+            <h2>Add Your Playlist</h2>
+            <div class="play">
+                <form action="" method="post" enctype="multipart/form-data">
+                    <div class = "form">
+                        <label for="">Artis</label>
+                        <input type="text" name="artis" required>   
+                        <label for="">Judul</label>
+                        <input type="text" name="judul" required>
+                        <label for="">Link</label>
+                        <input type="text" name="link" required>
+                        <label for="">Gambar</label>
+                        <input type="file" name="foto" require>
+                    </div>
+                    <div class = "form">
+                    <button type="submit" name="submit"><b>Submit</b></button>
+                    </div>
+                    
+                    
+                    
+                </form>
             </div>
         </div>
     </div>

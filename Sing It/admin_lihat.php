@@ -20,7 +20,8 @@
             <div id="Belakang" onclick="ubahheader1()">It</div>
         </div>
         <ul >
-            <li><a href="admin.php">Home</a></li>
+        <li><a href="admin.php">Home</a></li>
+            <li><a href="admin_tambah.php">Add Playlist</a></li>
             <li><a href="admin_lihat.php">Edit Playlist</a></li>
             <li><a href="index.php">Logout</a></li>
             
@@ -41,7 +42,7 @@
                 <th>Judul</th>
                 <th>Link</th>
                 <th>Gambar</th>
-                <th></th>
+                <th>Aksi</th>
             </tr>
             
             <?php 
