@@ -12,7 +12,6 @@
     --background: linear-gradient(#051224, #182c4e, #3f5478);
 }   
 
-
 body{
     background: var(--background);
     width: 100%;

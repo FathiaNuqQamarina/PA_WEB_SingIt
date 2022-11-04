@@ -25,13 +25,11 @@ body{
     height: 100vh;
     width: 100%;
     background-color: var(--background);
-    background-size: cover;
-    background-position: right;
 }
 
 
-.login{
-    background-image: url(https://img.freepik.com/free-photo/singing-happy-caucasian-girl-s-portrait-dark-studio-background-neon-light-beautiful-female-model-with-speaker_155003-26150.jpg?w=740&t=st=1667491353~exp=1667491953~hmac=e8b04a4542f5a50efd11257d62feea44296c8cfeec88735f858d83a4aaa40c73);
+.daftar{
+    background-image: url(https://img.freepik.com/free-photo/beautiful-brunette-woman-singing-microphone-isolated-gray-wall_231208-12884.jpg?w=740&t=st=1667491276~exp=1667491876~hmac=d8af76d6cb49364058f37a198e6fb0d353641d6b2ba8da85de371ca4a6b80e0d);
     background-size: cover;
     background-position: right;
     justify-content: space-evenly;
@@ -44,7 +42,7 @@ body{
 
 .daftar-text {
     color: #111;
-    font-weight: 600;
+    font-weight: 500;
     font-size: 1.1rem;
     text-align: center;
     margin-bottom: 50px;
@@ -53,7 +51,7 @@ body{
 }
 
 .bungkus {
-    width: 420px;
+    width: 400px;
     min-height: 400px;
     background: #FFF;
     border-radius: 5px;
@@ -107,7 +105,7 @@ button:hover{
 
 .login-register-text {
     color: #111;
-    font-weight: 550;
+    font-weight: 600;
 }
 
 .login-register-text a {
