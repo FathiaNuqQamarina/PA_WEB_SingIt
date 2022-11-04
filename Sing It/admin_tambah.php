@@ -7,7 +7,7 @@
     if(isset($_POST['submit'])){
         $artis = $_POST['artis'];
         $judul = $_POST['judul'];
-        $tanggal= date('Y:m:d');
+        $tanggal= date('d/m/Y H:i:s');
         
         $gambar = $_FILES['foto']['name'];
         $x = explode('.', $gambar);
@@ -47,8 +47,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SingIt</title>
-    <link rel="stylesheet" href="stylesheet/style_admin.css?v9">
-        
+    <link rel="stylesheet" href="stylesheet/style_admin.css?v7">
 </head>
 <body >
     <nav class="Navigator">
@@ -74,7 +73,7 @@
     </nav>
     <div class= "bungkus">
         <div class="containerplay">
-            <h2>Add Your Playlist</h2>
+            <h2>Add Data Playlist</h2>
             <div class="play">
                 <form action="" method="post" enctype="multipart/form-data">
                     <div class = "form">

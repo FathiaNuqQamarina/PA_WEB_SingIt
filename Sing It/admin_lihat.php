@@ -10,7 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SingIt</title>
-    <link rel="stylesheet" href="stylesheet/style_playlist.css?v5">
+    <link rel="stylesheet" href="stylesheet/style_playlist.css?v6">
         
 </head>
 <body >
@@ -36,6 +36,7 @@
 
     </nav>
     <div class="ContentPlace">
+        <h1>Daftar Data Playlist</h1>
         <table >
             <tr>
                 <th>Artis</th>

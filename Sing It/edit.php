@@ -78,7 +78,7 @@
     </nav>
     <div class= "bungkus">
         <div class="containerplay">
-            <h2>Edit Your Playlist</h2>
+            <h2>Edit Data Playlist</h2>
             <div class="play">
                 <form action="" method="post" enctype="multipart/form-data">
                     <div class = "form">

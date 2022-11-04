@@ -225,6 +225,7 @@ body{
     width: 90%;
     height: 100vh;
     margin-left :70px;
+    border-radius: 10%;
 
 }
 
@@ -305,23 +306,30 @@ a{
 }
 
 table{
-    margin-top: 100px;
+    margin-top: 50px;
 }
 
 th{
-    font-size: 30px;
+    font-size: 20px;
 }
 
 td{
     text-align: center;
 }
 
-table, tr, th, td {
-    border: 3px solid var(--primary);
-    border-collapse: collapse;
+table, tr {
     padding: 20px 50px 20px 50px;
     color: var(--secondary);
-    background-color: #182c4e;
+}
+
+h1 {
+    margin-top: 50px;
+    color: var(--secondary);
+}
+
+th, td{
+    border-bottom: 3px solid var(--secondary);
+    padding: 20px 50px 20px 50px;
 }
 
 button{
@@ -336,5 +344,5 @@ button{
 }
 
 img{
-    width: 200px;
+    width: 100px;
 }

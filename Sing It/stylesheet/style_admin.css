@@ -228,6 +228,7 @@ body{
     opacity: 100%;
     border-radius: 45px;
     margin-top: 20px;
+    margin-left: 23%;
     background-color: var(--container);
 }
 
@@ -296,6 +297,8 @@ a{
     width: 100%;
     display: flex;
     justify-content: space-evenly;
+    margin-left: 50px;
+    margin-right: 50px;
 }
 
 .play div{
