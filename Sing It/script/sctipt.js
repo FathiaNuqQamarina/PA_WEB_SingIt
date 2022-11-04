@@ -20,9 +20,21 @@ function ubahheader1(){
     
 }
 
+setInterval(activeslideimg0,4000);   
+setInterval(activeslideimg1,8000);   
+setInterval(activeslideimg2,12000);   
 
+function activeslideimg0(activeSlide = 0){
+    const slide = document.querySelectorAll(".content");
+    slide[activeSlide].classList.toggle("active");
+}
 
-function activeslideimg(activeSlide = 1){
+function activeslideimg1(activeSlide = 1){
+    const slide = document.querySelectorAll(".content");
+    slide[activeSlide].classList.toggle("active");
+}
+
+function activeslideimg2(activeSlide = 2){
     const slide = document.querySelectorAll(".content");
     slide[activeSlide].classList.toggle("active");
 }
@@ -30,12 +42,4 @@ function activeslideimg(activeSlide = 1){
 function mode(){
     const ubah = document.body;
     ubah.classList.toggle("light")
-}
-
-function popup(){
-    alert("Lagu Di Tambahkan Ke Playlist")
-}
-
-function popupdel(){
-    alert("Lagu Di Hapus dari Playlist")
 }

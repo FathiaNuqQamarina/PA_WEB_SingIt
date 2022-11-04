@@ -16,7 +16,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SingIt</title>
-    <link rel="stylesheet" href="stylesheet/style_play.css?v6">
+    <link rel="stylesheet" href="stylesheet/style_play.css?v2">
         
 </head>
 <body >
@@ -29,7 +29,6 @@
             <li><a href="home.php">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="">Artist</a></li>
-            <li><a href="">Album</a></li>
             <li><a href="index.php">Logout</a></li>
             
             <li ><input class="btn" onclick="mode()" type="checkbox"></li>

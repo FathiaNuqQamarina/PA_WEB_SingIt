@@ -15,30 +15,16 @@
         $judul = $_POST['judul'];
         $tanggal= date('Y:m:d');
         
-        $gambar = $_FILES['foto']['name'];
-        $x = explode('.', $gambar);
-        $ekstensi = strtolower(end($x));
 
-        $gambar_baru = "$judul.$ekstensi";
-        $tmp = $_FILES['foto']['tmp_name'];
-
-        $lagu = $_FILES['lagu']['name'];
-        $x = explode('.', $lagu);
-        $ekstensi = strtolower(end($x));
-
-        $lagu_baru = "$judul.$ekstensi";
-        $tmplagu = $_FILES['lagu']['tmp_name'];
-
-        if(move_uploaded_file($tmp, './file/' . $gambar_baru) & move_uploaded_file($tmplagu, './file/' . $lagu_baru)){
-            $sql_upload = mysqli_query($conn_log,"UPDATE `playlist` SET `Penyanyi`='".$artis."',`Lagu`= '".$judul."',`File`='".$lagu_baru."',`Gambar`=''".$gambar_baru."',`Tanggal`='".$tanggal."' WHERE `id` = '".$id."'");
-            if($sql_upload){
-                echo '<script language = "javascript">
-                alert("Data Berhasil Di Input") </script>';    
-            }
-            else{
-                echo '<script language = "javascript">
-                alert("Data Gagal Di Input") </script>' ;    
-            }
+    
+        $sql_upload = mysqli_query($conn_log,"UPDATE `playlist` SET `Penyanyi`='".$artis."',`Lagu`= '".$judul."',`Tanggal`='".$tanggal."' WHERE `id` = '".$id."'");
+        if($sql_upload){
+            echo '<script language = "javascript">
+            alert("Data Berhasil Di Input") ;document.location = "admin_lihat.php";</script>';    
+        }
+        else{
+            echo '<script language = "javascript">
+            alert("Data Gagal Di Input");document.location = "admin_lihat.php"; </script>' ;    
         }
     }
 
@@ -83,13 +69,9 @@
                 <form action="" method="post" enctype="multipart/form-data">
                     <div class = "form">
                         <label for="">Artis</label>
-                        <input type="text" name="artis" required><br>
+                        <input type="text" name="artis" value = "<?php echo $row['Penyanyi'] ?>" ><br>
                         <label for="">Judul</label>
-                        <input type="text" name="judul" required>
-                        <label for="">File Lagu</label>
-                        <input type="file" name="lagu" required>
-                        <label for="">Gambar</label>
-                        <input type="file" name="foto" >
+                        <input type="text" name="judul" value = "<?php echo $row['Lagu'] ?>" >
                     </div>
                     <div class = "form">
                     <button type="submit" name="submit"><b>Submit</b></button>
