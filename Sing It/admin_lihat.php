@@ -40,8 +40,9 @@
             <tr>
                 <th>Artis</th>
                 <th>Judul</th>
-                <th>Link</th>
+                <th>File</th>
                 <th>Gambar</th>
+                <th>Waktu Upload</th>
                 <th>Aksi</th>
             </tr>
             
@@ -53,7 +54,11 @@
             <tr>
                 <td><?php echo $row['Penyanyi'] ?></td>
                 <td><?php echo $row['Lagu'] ?></td>
-                <td><?php echo $row['File'] ?></td>
+                <td><div class = "playlagu">
+                <audio controls>
+                    <source src="file/<?php echo $row['File']?>" type="audio/mp3">
+                </audio>  
+                </div></td>
                 <td><img src="file/<?php echo $row['Gambar']?>" alt=""></td>
                 <td><?php echo $row['Tanggal'] ?></td>
                 <td>

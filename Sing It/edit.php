@@ -61,7 +61,8 @@
             <div id="Belakang" onclick="ubahheader1()">It</div>
         </div>
         <ul >
-            <li><a href="admin.php">Home</a></li>
+        <li><a href="admin.php">Home</a></li>
+            <li><a href="admin_tambah.php">Add Playlist</a></li>
             <li><a href="admin_lihat.php">Edit Playlist</a></li>
             <li><a href="index.php">Logout</a></li>
             
@@ -77,7 +78,7 @@
     </nav>
     <div class= "bungkus">
         <div class="containerplay">
-            <h2>Add Your Playlist</h2>
+            <h2>Edit Your Playlist</h2>
             <div class="play">
                 <form action="" method="post" enctype="multipart/form-data">
                     <div class = "form">
@@ -85,6 +86,8 @@
                         <input type="text" name="artis" required><br>
                         <label for="">Judul</label>
                         <input type="text" name="judul" required>
+                        <label for="">File Lagu</label>
+                        <input type="file" name="lagu" required>
                         <label for="">Gambar</label>
                         <input type="file" name="foto" >
                     </div>
