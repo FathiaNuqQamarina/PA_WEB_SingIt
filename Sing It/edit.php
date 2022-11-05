@@ -3,28 +3,79 @@
 ?>
 
 <?php
-    if(isset($_GET['id'])){
-        $id = $_GET['id'];
-        $hasil = mysqli_query($conn_log, "SELECT * FROM playlist WHERE id = '".$id."' ");
-        $row = mysqli_fetch_array($hasil);
+    if(isset($_GET['id_playlist'])){
+        $id_playlist = $_GET['id_playlist'];
+        $hasil_playlist = mysqli_query($conn_log, "SELECT * FROM playlist WHERE id_playlist = '".$id_playlist."' ");
+        $row_playlist = mysqli_fetch_array($hasil_playlist);
+        $row_barat = 0;
+        $row_indo = 0;
+        $row_korea = 0;
+        $id_barat = 0;
+        $id_indo = 0;
+        $id_korea = 0;
+    }
+    elseif(isset($_GET['id_barat'])){
+        $id_barat = $_GET['id_barat'];
+        $hasil_barat = mysqli_query($conn_log, "SELECT * FROM topbarat WHERE id_barat = '".$id_barat."' ");
+        $row_barat = mysqli_fetch_array($hasil_barat);
+        $row_playlist = 0;
+        $row_indo = 0;
+        $row_korea = 0;
+        $id_playlist = 0;
+        $id_indo = 0;
+        $id_korea = 0;
+    }
+    elseif(isset($_GET['id_indo'])){
+        $id_indo = $_GET['id_indo'];
+        $hasil_indo = mysqli_query($conn_log, "SELECT * FROM topindo WHERE id_indo = '".$id_indo."' ");
+        $row_indo = mysqli_fetch_array($hasil_indo);
+        $row_playlist = 0;
+        $row_barat = 0;
+        $row_korea = 0;
+        $id_playlist = 0;
+        $id_barat = 0;
+        $id_korea = 0;
+    }
+    elseif(isset($_GET['id_korea'])){
+        $id_korea = $_GET['id_korea'];
+        $hasil_korea = mysqli_query($conn_log, "SELECT * FROM topkorea WHERE id_korea = '".$id_korea."' ");
+        $row_korea = mysqli_fetch_array($hasil_korea);
+        $row_playlist = 0;
+        $row_barat = 0;
+        $row_indo = 0;
     }
 
     date_default_timezone_set("Asia/Makassar");
     if(isset($_POST['submit'])){
         $artis = $_POST['artis'];
         $judul = $_POST['judul'];
-        $tanggal= date('Y:m:d');
+        $tanggal= date('d/m/Y H:i:s');
         
 
     
-        $sql_upload = mysqli_query($conn_log,"UPDATE `playlist` SET `Penyanyi`='".$artis."',`Lagu`= '".$judul."',`Tanggal`='".$tanggal."' WHERE `id` = '".$id."'");
-        if($sql_upload){
+        $sql_upload_playlist = mysqli_query($conn_log,"UPDATE `playlist` SET `Penyanyi`='".$artis."',`Lagu`= '".$judul."',`Tanggal`='".$tanggal."' WHERE `id_playlist` = '".$id_playlist."'");
+        $sql_upload_barat= mysqli_query($conn_log,"UPDATE `topbarat` SET `Penyanyi`='".$artis."',`Lagu`= '".$judul."',`Tanggal`='".$tanggal."' WHERE `id_barat` = '".$id_barat."'");
+        $sql_upload_indo = mysqli_query($conn_log,"UPDATE `topindo` SET `Penyanyi`='".$artis."',`Lagu`= '".$judul."',`Tanggal`='".$tanggal."' WHERE `id_indo` = '".$id_indo."'");
+        $sql_upload_korea = mysqli_query($conn_log,"UPDATE `topkorea` SET `Penyanyi`='".$artis."',`Lagu`= '".$judul."',`Tanggal`='".$tanggal."' WHERE `id_korea` = '".$id_korea."'");
+        if($sql_upload_playlist){
             echo '<script language = "javascript">
-            alert("Data Berhasil Di Input") ;document.location = "admin_lihat.php";</script>';    
+            alert("Data Berhasil Di Input") ;document.location = "admin.php";</script>';    
+        }
+        elseif($sql_upload_barat){
+            echo '<script language = "javascript">
+            alert("Data Berhasil Di Input") ;document.location = "admin.php";</script>';    
+        }
+        elseif($sql_upload_indo){
+            echo '<script language = "javascript">
+            alert("Data Berhasil Di Input") ;document.location = "admin.php";</script>';    
+        }
+        elseif($sql_upload_korea){
+            echo '<script language = "javascript">
+            alert("Data Berhasil Di Input") ;document.location = "admin.php";</script>';    
         }
         else{
             echo '<script language = "javascript">
-            alert("Data Gagal Di Input");document.location = "admin_lihat.php"; </script>' ;    
+            alert("Data Gagal Di Input");document.location = "admin.php"; </script>' ;    
         }
     }
 
@@ -49,7 +100,7 @@
         <ul >
         <li><a href="admin.php">Home</a></li>
             <li><a href="admin_tambah.php">Add Playlist</a></li>
-            <li><a href="admin_lihat.php">Edit Playlist</a></li>
+            <li><a href="admin_edit.php">Edit Playlist</a></li>
             <li><a href="index.php">Logout</a></li>
             
             <li ><input class="btn" onclick="mode()" type="checkbox"></li>
@@ -69,9 +120,36 @@
                 <form action="" method="post" enctype="multipart/form-data">
                     <div class = "form">
                         <label for="">Artis</label>
-                        <input type="text" name="artis" value = "<?php echo $row['Penyanyi'] ?>" ><br>
+                        <input type="text" name="artis" value = "<?php 
+                            if($row_playlist> 1){
+                                echo $row_playlist['Penyanyi'];
+                            }
+                            elseif($row_barat> 1){
+                                echo $row_barat['Penyanyi'];
+                            }
+                            elseif($row_indo> 1){
+                                echo $row_indo['Penyanyi'];
+                            }
+                            elseif($row_korea> 1){
+                                echo $row_korea['Penyanyi'];
+                            }
+                            
+                        ?>" ><br>
                         <label for="">Judul</label>
-                        <input type="text" name="judul" value = "<?php echo $row['Lagu'] ?>" >
+                        <input type="text" name="judul" value = "<?php 
+                            if($row_playlist > 1){
+                                echo $row_playlist['Lagu'];
+                            } 
+                            elseif($row_barat> 1){
+                                echo $row_barat['Lagu'];
+                            }
+                            elseif($row_indo> 1){
+                                echo $row_indo['Lagu'];
+                            }
+                            elseif($row_korea> 1){
+                                echo $row_korea['Lagu'];
+                            }
+                        ?>" >
                     </div>
                     <div class = "form">
                     <button type="submit" name="submit"><b>Submit</b></button>

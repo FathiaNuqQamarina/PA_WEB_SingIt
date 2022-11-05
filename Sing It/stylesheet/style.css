@@ -327,7 +327,16 @@ button{
     padding: 0 20px;
 }
 
-.content h3{
+
+.content a{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content div h3{
     display: none;
     color: whitesmoke;
 }

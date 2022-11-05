@@ -1,8 +1,5 @@
 <?php
     require('koneksi.php');
-    // if(!isset($_SESSION['Login'])){
-    //     echo"<script>window.location='login.php';</script>";
-    // }
 ?>
 
 <!DOCTYPE html>

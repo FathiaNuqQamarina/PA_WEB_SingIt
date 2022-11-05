@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SingIt</title>
-    <link rel="stylesheet" href="stylesheet/style_admin.css?v6">
+    <link rel="stylesheet" href="stylesheet/style_admin_lihat.css?v4">
         
 </head>
 <body >
@@ -32,23 +32,36 @@
     </nav>
     <div class= "bungkus">
         <div class = "walcome">
-            <h1 class = "head">DASHBOARD</h1>
+            <h1 class = "head">Edit Song</h1>
             <h3 >Selamat Datang,</h3><br>
             <h2>Admin Sing<span> It<span></h2>
         </div>
         <div class="box">
-            <a href="daftar_user.php">
-                <div class="user-box">
-                    <h2>Data User</h2>
-                    <img src="img/user.png" alt="user-icon" width=100px>
+            <a href="admin_lihat_playlist.php">
+                <div>
+                    <img src="img/pen.png" alt="song-icon" width=100px>
+                    <h3>Playlist</h3>
                 </div>
             </a>
-            <a href="admin_data_lagu.php">
-                <div class="lagu-box">
-                    <h2>Data Lagu</h2>
-                    <img src="img/musical-note.png" alt="song-icon" width=100px>
+            <a href="admin_lihat_barat.php">
+                <div>
+                    <img src="img/pen.png" alt="song-icon" width=100px>
+                    <h3>Top Barat</h3>
                 </div>
             </a>
+            <a href="admin_lihat_indo.php">
+                <div>
+                    <img src="img/pen.png" alt="song-icon" width=100px>
+                    <h3>Top Indonesia</h3>
+                </div>
+            </a>
+            <a href="admin_lihat_korea.php">
+                <div>
+                    <img src="img/pen.png" alt="song-icon" width=100px>
+                    <h3>Top Korea</h3>
+                </div>
+                </a>
+            
         </div>
     </div>
     <p>Copyright. Yanuar Gideon Simalango</p>

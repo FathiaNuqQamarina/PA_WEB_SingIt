@@ -10,7 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SingIt</title>
-    <link rel="stylesheet" href="stylesheet/style.css?v7">
+    <link rel="stylesheet" href="stylesheet/style.css?v2">
         
 </head>
 <body >
@@ -39,13 +39,25 @@
         <div class="ContainerContent">
             <div class="slidecontent">
                 <div class="content"  style="background-image: url(img/barat.png);">
-                    <h3>Top 10 Barat</h3>
+                    <a href="user_lihat_barat.php">
+                        <div>
+                            <h3>Top 10 Barat</h3>
+                        </div>
+                    </a>
                 </div>
                 <div class="content"  style="background-image: url(img/indo.png);">
-                    <h3>Top 10 Indonesia</h3>
+                    <a href="user_lihat_indo.php">
+                        <div>
+                            <h3>Top 10 Indonesia</h3>
+                        </div>
+                    </a>
                 </div> 
                 <div class="content"  style="background-image: url(img/new.png);">
-                    <h3>Top 10 K-pop</h3>
+                    <a href="user_lihat_korea.php">
+                        <div>
+                            <h3>Top 10 Korea</h3>
+                        </div>
+                    </a>
                 </div>  
             </div>
         </div>
@@ -80,7 +92,7 @@
                     </a>
                     <br>
                     <br>
-                    <a href="play.php?id=<?=$row['id'];?>">
+                    <a href="play.php?id_playlist=<?=$row['id_playlist'];?>">
                         <img id ="icon" src="img/play.png" alt="play" >
                     </a>
                 </td>
