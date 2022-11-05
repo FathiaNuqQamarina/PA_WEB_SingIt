@@ -22,7 +22,7 @@
         <ul >
             <li><a href="home.php">Home</a></li>
             <li><a href="#about">About</a></li>
-            <li><a href="">Artist</a></li>
+            <li><a href="artis.php">Artist</a></li>
             <li><a href="index.php">Logout</a></li>
             
             <li ><input class="btn" onclick="mode()" type="checkbox"></li>
@@ -63,6 +63,11 @@
         </div>
         <div class="containeralbum">
             <div style="background-image: url(img/tiara.jfif);">
+                    <a href="artis.php">
+                        <div>
+                            <h3>Top 10 Barat</h3>
+                        </div>
+                    </a>
             </div>
             <div style="background-image: url(img/fabio.jfif);">
             </div>
