@@ -93,8 +93,6 @@
                 </td>
             </tr>
             <?php } ?>
-        </table>
-        <table >
         <?php 
                 include "koneksi.php";
                 if (isset($_GET['cari'])){
@@ -134,8 +132,6 @@
                 </td>
             </tr>
             <?php } ?>
-        </table>
-        <table >
         <?php 
                 include "koneksi.php";
                 if (isset($_GET['cari'])){
@@ -175,8 +171,7 @@
                 </td>
             </tr>
             <?php } ?>
-        </table>
-        <table >
+
         <?php 
                 include "koneksi.php";
                 if (isset($_GET['cari'])){
