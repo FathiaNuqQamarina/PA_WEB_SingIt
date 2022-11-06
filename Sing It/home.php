@@ -62,16 +62,24 @@
             </div>
         </div>
         <div class="containeralbum">
-            <div style="background-image: url(img/tiara.jfif);">
-                    <a href="artis.php">
-                        <div>
-                            <h3></h3>
-                        </div>
-                    </a>
+            <div class="artisini">
+                <a href="user_artistiara.php">
+                    <div class="gambarartis" style="background-image: url(img/tiara.jfif);">
+                    </div>
+                </a>
             </div>
-            <div style="background-image: url(img/fabio.jfif);">
+            <div class="artisini">
+                <a href="user_artistiara.php">
+                    <div class="gambarartis" style="background-image: url(img/fabio.jfif);">
+                        
+                    </div>
+                </a>
             </div>
-            <div style="background-image: url(img/mahalini.jfif);">
+            <div class="artisini">
+                <a href="user_artistiara.php">
+                    <div class="gambarartis" style="background-image: url(img/mahalini.jfif);">
+                    </div>
+                </a>
             </div>
         </div>
         <div>

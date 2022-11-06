@@ -264,6 +264,20 @@ body{
     cursor: pointer;
 }
 
+.containeralbum .artisini{
+    align-items: center;
+    padding: 0px 80px 12px 60px; 
+}
+
+.containeralbum .artisini .gambarartis{
+    height: 45vh;
+    width: 120%;
+}
+
+h1{
+    color: white;
+    text-align: center;
+}
 .containerplay{
     display: flex;
     flex-direction: column;

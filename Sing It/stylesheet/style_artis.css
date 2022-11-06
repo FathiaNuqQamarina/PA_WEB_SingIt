@@ -212,7 +212,7 @@ body{
 
 .containeralbum div{
     height: 45vh;
-    width: 30%;
+    width: 80%;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -221,6 +221,10 @@ body{
     align-items: center;
 }
 
+.containeralbum .artisini{
+    align-items: center;
+    padding: 0px 60px 12px 100px; 
+}
 
 input{
     border-radius: 10px;
