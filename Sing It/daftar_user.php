@@ -36,6 +36,14 @@
 
     </nav>
     <div class="ContentPlace">
+        <h1>Daftar Data User</h1>
+    <div>
+        <form id="box-cari" method= "get" action="">
+            <input type="text" placeholder= "Cari Lagu ..." name="cari" value="<?php if(isset($_GET['cari'])){echo $_GET['cari'];} ?>">
+            <br>
+            <button type="submit">Cari</button>
+        </form>  
+        </div>
         <table >
             <tr>
                 <th>Nama</th>
@@ -43,16 +51,24 @@
             </tr>
             
             <?php 
-                $read = mysqli_query($conn_log, "SELECT * FROM login ");
-                if(mysqli_num_rows($read) > 0){
-                    while($row = mysqli_fetch_array($read)){
+                include "koneksi.php";
+                if (isset($_GET['cari'])){
+                    $pencarian= $_GET['cari'];
+                    $query = "SELECT * FROM login WHERE nama LIKE '%".$pencarian."%' OR username LIKE '%".$pencarian."%'";  
+                }else{
+                    $query= "SELECT * FROM login";
+                }
+
+
+                $read = mysqli_query($conn_log, $query);
+                while($row = mysqli_fetch_assoc($read)){
             ?>
             <tr>
                 <td><?php echo $row['nama'] ?></td>
                 <td><?php echo $row['username'] ?></td>
 
             </tr>
-            <?php }} ?>
+            <?php } ?>
         </table>
     </div>
     

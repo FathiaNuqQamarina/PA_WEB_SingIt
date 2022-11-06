@@ -445,7 +445,7 @@ a{
 }
 
 table{
-    margin-top: 100px;
+    margin-top: 50px;
 }
 
 th{
@@ -473,4 +473,17 @@ img{
 
 #icon{
     width: 30px;
+}
+
+#box-cari{
+    display: flex;
+    flex-direction: row;
+    padding-left: 50px;
+    margin-left: 80%;
+    margin-top: 20%;
+}
+
+#box-cari button{
+    padding-left: 10px;
+    padding-right: 10px;
 }

@@ -37,6 +37,13 @@
     </nav>
     <div class="ContentPlace">
         <h1>Daftar Data Lagu</h1>
+        <div>
+        <form id="box-cari" method= "get" action="">
+            <input type="text" placeholder= "Cari Lagu ..." name="cari" value="<?php if(isset($_GET['cari'])){echo $_GET['cari'];} ?>">
+            <br>
+            <button type="submit">Cari</button>
+        </form>  
+        </div>
         <table >
             <tr>
                 <th>Artis</th>
@@ -48,9 +55,17 @@
             </tr>
             
             <?php 
-                $read = mysqli_query($conn_log, "SELECT * FROM playlist ");
-                if(mysqli_num_rows($read) > 0){
-                    while($row = mysqli_fetch_array($read)){
+                include "koneksi.php";
+                if (isset($_GET['cari'])){
+                    $pencarian= $_GET['cari'];
+                    $query = "SELECT * FROM playlist WHERE Penyanyi LIKE '%".$pencarian."%' OR Lagu LIKE '%".$pencarian."%'";  
+                }else{
+                    $query= "SELECT * FROM playlist";
+                }
+
+
+                $read = mysqli_query($conn_log, $query);
+                while($row = mysqli_fetch_assoc($read)){
             ?>
             <tr>
                 <td><?php echo $row['Penyanyi'] ?></td>
@@ -77,13 +92,21 @@
                 </a>
                 </td>
             </tr>
-            <?php }} ?>
+            <?php } ?>
         </table>
         <table >
-            <?php 
-                $read = mysqli_query($conn_log, "SELECT * FROM topbarat ");
-                if(mysqli_num_rows($read) > 0){
-                    while($row = mysqli_fetch_array($read)){
+        <?php 
+                include "koneksi.php";
+                if (isset($_GET['cari'])){
+                    $pencarian= $_GET['cari'];
+                    $query = "SELECT * FROM topbarat WHERE Penyanyi LIKE '%".$pencarian."%' OR Lagu LIKE '%".$pencarian."%'";  
+                }else{
+                    $query= "SELECT * FROM topbarat";
+                }
+
+
+                $read = mysqli_query($conn_log, $query);
+                while($row = mysqli_fetch_assoc($read)){
             ?>
             <tr>
                 <td><?php echo $row['Penyanyi'] ?></td>
@@ -110,13 +133,21 @@
                 </a>
                 </td>
             </tr>
-            <?php }} ?>
+            <?php } ?>
         </table>
         <table >
-            <?php 
-                $read = mysqli_query($conn_log, "SELECT * FROM topindo ");
-                if(mysqli_num_rows($read) > 0){
-                    while($row = mysqli_fetch_array($read)){
+        <?php 
+                include "koneksi.php";
+                if (isset($_GET['cari'])){
+                    $pencarian= $_GET['cari'];
+                    $query = "SELECT * FROM topindo WHERE Penyanyi LIKE '%".$pencarian."%' OR Lagu LIKE '%".$pencarian."%'";  
+                }else{
+                    $query= "SELECT * FROM topindo";
+                }
+
+
+                $read = mysqli_query($conn_log, $query);
+                while($row = mysqli_fetch_assoc($read)){
             ?>
             <tr>
                 <td><?php echo $row['Penyanyi'] ?></td>
@@ -143,13 +174,21 @@
                 </a>
                 </td>
             </tr>
-            <?php }} ?>
+            <?php } ?>
         </table>
         <table >
-            <?php 
-                $read = mysqli_query($conn_log, "SELECT * FROM topkorea ");
-                if(mysqli_num_rows($read) > 0){
-                    while($row = mysqli_fetch_array($read)){
+        <?php 
+                include "koneksi.php";
+                if (isset($_GET['cari'])){
+                    $pencarian= $_GET['cari'];
+                    $query = "SELECT * FROM topkorea WHERE Penyanyi LIKE '%".$pencarian."%' OR Lagu LIKE '%".$pencarian."%'";  
+                }else{
+                    $query= "SELECT * FROM topkorea";
+                }
+
+
+                $read = mysqli_query($conn_log, $query);
+                while($row = mysqli_fetch_assoc($read)){
             ?>
             <tr>
                 <td><?php echo $row['Penyanyi'] ?></td>
@@ -176,7 +215,7 @@
                 </a>
                 </td>
             </tr>
-            <?php }} ?>
+            <?php } ?>
         </table>
 
     </div>

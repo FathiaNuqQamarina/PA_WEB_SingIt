@@ -10,7 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SingIt</title>
-    <link rel="stylesheet" href="stylesheet/style.css?v2">
+    <link rel="stylesheet" href="stylesheet/style.css?v6">
         
 </head>
 <body >
@@ -65,7 +65,7 @@
             <div style="background-image: url(img/tiara.jfif);">
                     <a href="artis.php">
                         <div>
-                            <h3>Top 10 Barat</h3>
+                            <h3></h3>
                         </div>
                     </a>
             </div>
@@ -73,6 +73,13 @@
             </div>
             <div style="background-image: url(img/mahalini.jfif);">
             </div>
+        </div>
+        <div>
+        <form id="box-cari" method= "get" action="">
+            <input type="text" placeholder= "Cari Lagu ..." name="cari" value="<?php if(isset($_GET['cari'])){echo $_GET['cari'];} ?>">
+            <br>
+            <button type="submit">Cari</button>
+        </form>  
         </div>
         <table>
             <tr>
@@ -83,9 +90,17 @@
             </tr>
             
             <?php 
-                $read = mysqli_query($conn_log, "SELECT * FROM playlist ");
-                if(mysqli_num_rows($read) > 0){
-                    while($row = mysqli_fetch_array($read)){
+                include "koneksi.php";
+                if (isset($_GET['cari'])){
+                    $pencarian= $_GET['cari'];
+                    $query = "SELECT * FROM playlist WHERE Penyanyi LIKE '%".$pencarian."%' OR Lagu LIKE '%".$pencarian."%'";  
+                }else{
+                    $query= "SELECT * FROM playlist";
+                }
+
+
+                $read = mysqli_query($conn_log, $query);
+                while($row = mysqli_fetch_assoc($read)){
             ?>
             <tr>
                 <td><?php echo $row['Penyanyi'] ?></td>
@@ -102,7 +117,7 @@
                     </a>
                 </td>
             </tr>
-            <?php }} ?>
+            <?php } ?>
         </table>
     </div>
     <div id="about">

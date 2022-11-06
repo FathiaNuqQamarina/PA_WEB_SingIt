@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 05, 2022 at 06:15 AM
+-- Generation Time: Nov 06, 2022 at 05:51 AM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -62,7 +62,8 @@ CREATE TABLE `playlist` (
 --
 
 INSERT INTO `playlist` (`id_playlist`, `Penyanyi`, `Lagu`, `File`, `Gambar`, `Tanggal`) VALUES
-(14, 'Tulus', 'Manusia Kuat', 'Manusia Kuat.mp3', 'Manusia Kuat.jpg', '05/11/2022 12:53:39');
+(14, 'Tulus', 'Manusia Kuat', 'Manusia Kuat.mp3', 'Manusia Kuat.jpg', '05/11/2022 12:53:39'),
+(15, 'Lyodra', 'Pesan Terakhir', 'Pesan Terakhir.mp3', 'Pesan Terakhir.jpg', '05/11/2022 18:38:07');
 
 -- --------------------------------------------------------
 
@@ -84,7 +85,8 @@ CREATE TABLE `topbarat` (
 --
 
 INSERT INTO `topbarat` (`id_barat`, `Penyanyi`, `Lagu`, `File`, `Gambar`, `Tanggal`) VALUES
-(2, 'Harry Styles', 'As It Was', 'As It Was.mp3', 'As It Was.jpg', '05/11/2022 12:56:46');
+(2, 'Harry Styles', 'As It Was', 'As It Was.mp3', 'As It Was.jpg', '05/11/2022 12:56:46'),
+(3, 'Troye Sivan', 'Youth', 'Youth.mp3', 'Youth.jpg', '06/11/2022 12:40:27');
 
 -- --------------------------------------------------------
 
@@ -106,7 +108,8 @@ CREATE TABLE `topindo` (
 --
 
 INSERT INTO `topindo` (`id_indo`, `Penyanyi`, `Lagu`, `File`, `Gambar`, `Tanggal`) VALUES
-(1, 'Hindia', 'Evaluasi', 'Evaluasi.mp3', 'Evaluasi.jpg', '05/11/2022 12:57:07');
+(1, 'Hindia', 'Evaluasi', 'Evaluasi.mp3', 'Evaluasi.jpg', '05/11/2022 12:57:07'),
+(3, 'Soegi Bornean', 'Pijaraya', 'Pijaraya.mp3', 'Pijaraya.jpg', '06/11/2022 12:27:31');
 
 -- --------------------------------------------------------
 
@@ -128,7 +131,8 @@ CREATE TABLE `topkorea` (
 --
 
 INSERT INTO `topkorea` (`id_korea`, `Penyanyi`, `Lagu`, `File`, `Gambar`, `Tanggal`) VALUES
-(1, 'BlackPink', 'Pink Venom', 'Pink Venom.mp3', 'Pink Venom.jpg', '05/11/2022 11:54:39');
+(1, 'BlackPink', 'Pink Venom', 'Pink Venom.mp3', 'Pink Venom.jpg', '05/11/2022 11:54:39'),
+(2, 'Red Velvet', 'Psycho', 'Psycho.mp3', 'Psycho.jpg', '06/11/2022 12:40:00');
 
 --
 -- Indexes for dumped tables
@@ -166,25 +170,25 @@ ALTER TABLE `topkorea`
 -- AUTO_INCREMENT for table `playlist`
 --
 ALTER TABLE `playlist`
-  MODIFY `id_playlist` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id_playlist` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `topbarat`
 --
 ALTER TABLE `topbarat`
-  MODIFY `id_barat` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_barat` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `topindo`
 --
 ALTER TABLE `topindo`
-  MODIFY `id_indo` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_indo` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `topkorea`
 --
 ALTER TABLE `topkorea`
-  MODIFY `id_korea` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_korea` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
