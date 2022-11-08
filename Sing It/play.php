@@ -139,7 +139,9 @@
             </audio>  
         </div>
     </div>
-    <p>Copyright. Yanuar Gideon Simalango</p>
+    <footer>
+        <p>Copyright. Yanuar Gideon Simalango</p>
+    </footer>
     
     
     

@@ -16,8 +16,8 @@
         </div>
         <ul >
             <li><a href="admin.php">Home</a></li>
-            <li><a href="admin_tambah.php">Add Playlist</a></li>
-            <li><a href="admin_edit.php">Edit Playlist</a></li>
+            <li><a href="admin_tambah.php">Add Lagu</a></li>
+            <li><a href="admin_edit.php">Edit Lagu</a></li>
             <li><a href="index.php">Logout</a></li>
             
             <li ><input class="btn" onclick="mode()" type="checkbox"></li>
@@ -64,7 +64,9 @@
             
         </div>
     </div>
-    <p>Copyright. Yanuar Gideon Simalango</p>
+    <footer>
+        <p>Copyright. Yanuar Gideon Simalango</p>
+    </footer>
     
     
     

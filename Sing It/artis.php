@@ -44,21 +44,23 @@
             </a>
         </div>
         <div class="artisini">
-            <a href="user_artistiara.php">
+            <a href="user_artisfabio.php">
                 <div style="background-image: url(img/fabio.jfif);">
                     
                 </div>
             </a>
         </div>
         <div class="artisini">
-            <a href="user_artistiara.php">
+            <a href="user_artismahalini.php">
                 <div style="background-image: url(img/mahalini.jfif);">
                 </div>
             </a>
         </div>
     </div>
     
-    <p>Copyright. Yanuar Gideon Simalango</p>
+    <footer>
+        <p>Copyright. Yanuar Gideon Simalango</p>
+    </footer>
     
     
     

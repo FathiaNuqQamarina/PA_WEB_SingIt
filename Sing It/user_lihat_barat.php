@@ -10,7 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SingIt</title>
-    <link rel="stylesheet" href="stylesheet/style_user_lihat.css?v6">
+    <link rel="stylesheet" href="stylesheet/style_user_lihat.css?v2">
         
 </head>
 <body >
@@ -38,10 +38,10 @@
     <div class="ContentPlace">
         <h1>Daftar Lagu Top 10 Barat</h1>
         <div>
-        <form id="box-cari" method= "get" action="">
+        <form class="box-cari" method= "get" action="">
             <input type="text" placeholder= "Cari Lagu ..." name="cari" value="<?php if(isset($_GET['cari'])){echo $_GET['cari'];} ?>">
             <br>
-            <button type="submit">Cari</button>
+            <button type="submit"><img src="img/search.png"></button>
         </form>  
         </div>
         <table>
@@ -84,7 +84,9 @@
         </table>
     </div>
     
-    <p>Copyright. Yanuar Gideon Simalango</p>
+    <footer>
+        <p>Copyright. Yanuar Gideon Simalango</p>
+    </footer>
     
     
     

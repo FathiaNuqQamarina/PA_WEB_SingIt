@@ -21,7 +21,7 @@
         <ul >
             <li><a href="index.php">Home</a></li>
             <li><a href="#about">About</a></li>
-            <li><a href="">Artist</a></li>
+            <li><a href="login.php">Artist</a></li>
             <li><a href="register.php">Register</a></li>
             <li><a href="login.php">Login</a></li>
             
@@ -39,22 +39,47 @@
         <div class="ContainerContent">
             <div class="slidecontent">
                 <div class="content"  style="background-image: url(img/barat.png);">
-                    <h3>Top 10 Barat</h3>
+                    <a href="login.php">
+                        <div>
+                            <h3>Top 10 Barat</h3>
+                        </div>
+                    </a>
                 </div>
                 <div class="content"  style="background-image: url(img/indo.png);">
-                    <h3>Top 10 Indonesia</h3>
+                    <a href="login.php">
+                        <div>
+                            <h3>Top 10 Indonesia</h3>
+                        </div>
+                    </a>
                 </div> 
                 <div class="content"  style="background-image: url(img/new.png);">
-                    <h3>Top 10 K-pop</h3>
+                    <a href="login.php">
+                        <div>
+                            <h3>Top 10 Korea</h3>
+                        </div>
+                    </a>
                 </div>  
             </div>
         </div>
         <div class="containeralbum">
-        <div style="background-image: url(img/tiara.jfif);">
+            <div class="artisini">
+                <a href="login.php">
+                    <div class="gambarartis" style="background-image: url(img/tiara.jfif);">
+                    </div>
+                </a>
             </div>
-            <div style="background-image: url(img/fabio.jfif);">
+            <div class="artisini">
+                <a href="login.php">
+                    <div class="gambarartis" style="background-image: url(img/fabio.jfif);">
+                        
+                    </div>
+                </a>
             </div>
-            <div style="background-image: url(img/mahalini.jfif);">
+            <div class="artisini">
+                <a href="login.php">
+                    <div class="gambarartis" style="background-image: url(img/mahalini.jfif);">
+                    </div>
+                </a>
             </div>
         </div>
     </div>
@@ -64,7 +89,10 @@
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, distinctio accusantium? Aperiam qui perferendis eius odit fugit ullam dignissimos dolorum eaque! Eos veritatis provident deleniti totam amet, nemo iusto rem exercitationem alias. Sit atque accusantium omnis blanditiis ea illo eius, adipisci cupiditate assumenda eligendi fugiat? Quae quod inventore nihil magni nobis in corporis fugit maxime repellat, dolores eligendi nam obcaecati amet, iusto laborum excepturi ad porro similique? Porro illo quas ab molestias rerum. Rerum illo ipsam animi, dolores pariatur, saepe facere maxime quod, aperiam quasi harum esse quisquam sapiente perspiciatis nam porro molestiae eum asperiores soluta hic iste consequuntur fugit!</p>
         </div>
     </div>
-    <p>Copyright. Yanuar Gideon Simalango</p>
+
+    <footer>
+        <p>Copyright. Yanuar Gideon Simalango</p>
+    </footer>
     
     <script src="script/sctipt.js">
     </script>

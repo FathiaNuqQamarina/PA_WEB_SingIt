@@ -69,24 +69,24 @@
                 </a>
             </div>
             <div class="artisini">
-                <a href="user_artistiara.php">
+                <a href="user_artisfabio.php">
                     <div class="gambarartis" style="background-image: url(img/fabio.jfif);">
                         
                     </div>
                 </a>
             </div>
             <div class="artisini">
-                <a href="user_artistiara.php">
+                <a href="user_artismahalini.php">
                     <div class="gambarartis" style="background-image: url(img/mahalini.jfif);">
                     </div>
                 </a>
             </div>
         </div>
         <div>
-        <form id="box-cari" method= "get" action="">
+        <form class="box-cari" method= "get" action="">
             <input type="text" placeholder= "Cari Lagu ..." name="cari" value="<?php if(isset($_GET['cari'])){echo $_GET['cari'];} ?>">
             <br>
-            <button type="submit">Cari</button>
+            <button type="submit"><img src="img/search.png"></button>
         </form>  
         </div>
         <table>
@@ -134,9 +134,11 @@
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, distinctio accusantium? Aperiam qui perferendis eius odit fugit ullam dignissimos dolorum eaque! Eos veritatis provident deleniti totam amet, nemo iusto rem exercitationem alias. Sit atque accusantium omnis blanditiis ea illo eius, adipisci cupiditate assumenda eligendi fugiat? Quae quod inventore nihil magni nobis in corporis fugit maxime repellat, dolores eligendi nam obcaecati amet, iusto laborum excepturi ad porro similique? Porro illo quas ab molestias rerum. Rerum illo ipsam animi, dolores pariatur, saepe facere maxime quod, aperiam quasi harum esse quisquam sapiente perspiciatis nam porro molestiae eum asperiores soluta hic iste consequuntur fugit!</p>
         </div>
     </div>
-    <p>Copyright. Yanuar Gideon Simalango</p>
     
     
+    <footer>
+        <p>Copyright. Yanuar Gideon Simalango</p>
+    </footer>
     
     <script src="script/sctipt.js">
     </script>

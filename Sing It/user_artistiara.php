@@ -21,7 +21,6 @@
         </div>
         <ul >
             <li><a href="home.php">Home</a></li>
-            <li><a href="#about">About</a></li>
             <li><a href="artis.php">Artist</a></li>
             <li><a href="index.php">Logout</a></li>
             
@@ -44,8 +43,9 @@
                 <th></th>
             </tr>
             
+
             <?php 
-                $read = mysqli_query($conn_log, "SELECT * FROM playlist ");
+                $read = mysqli_query($conn_log, "SELECT * FROM playlist WHERE Penyanyi = 'Tiara'");
                 if(mysqli_num_rows($read) > 0){
                     while($row = mysqli_fetch_array($read)){
             ?>
@@ -62,7 +62,9 @@
         </table>
         </div>
     
-    <p>Copyright. Yanuar Gideon Simalango</p>
+    <footer>
+        <p>Copyright. Yanuar Gideon Simalango</p>
+    </footer>
     
     
     
