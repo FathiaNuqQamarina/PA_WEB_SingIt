@@ -1,5 +1,10 @@
 <?php
     require('koneksi.php');
+    session_start();
+    if ( !isset($_SESSION['login'])){
+        header("Location: login.php");
+        exit;
+    }
 ?>
 
 <?php
@@ -26,7 +31,7 @@
         
         if(move_uploaded_file($tmp, './file/' . $gambar_baru) & move_uploaded_file($tmplagu, './file/' . $lagu_baru)){
             
-            $sql_upload = mysqli_query($conn_log,"INSERT INTO `playlist`(`Penyanyi`, `Lagu`, `File`,`Gambar`,`Tanggal`) VALUES ('".$artis."','".$judul."','".$lagu_baru."','".$gambar_baru."','".$tanggal."')");
+            $sql_upload = mysqli_query($conn_log,"INSERT INTO `lagu`(`Penyanyi`, `Lagu`, `File`,`Gambar`,`Tanggal`) VALUES ('".$artis."','".$judul."','".$lagu_baru."','".$gambar_baru."','".$tanggal."')");
             if($sql_upload){
                 echo '<script language = "javascript">
                 alert("Data Berhasil Di Input") </script>';    
@@ -73,7 +78,7 @@
     </nav>
     <div class= "bungkus">
         <div class="containerplay">
-            <h2>Add Data Playlist</h2>
+            <h2>Add Data lagu</h2>
             <div class="play">
                 <form action="" method="post" enctype="multipart/form-data">
                     <div class = "form">

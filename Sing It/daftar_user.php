@@ -1,5 +1,10 @@
 <?php
     require('koneksi.php');
+    session_start();
+    if ( !isset($_SESSION['login'])){
+        header("Location: login.php");
+        exit;
+    }
 ?>
 
 
@@ -10,7 +15,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SingIt</title>
-    <link rel="stylesheet" href="stylesheet/style_playlist.css?v9">
+    <link rel="stylesheet" href="stylesheet/style_lagu.css?v9">
         
 </head>
 <body >
@@ -21,8 +26,8 @@
         </div>
         <ul >
         <li><a href="admin.php">Home</a></li>
-            <li><a href="admin_tambah.php">Add Playlist</a></li>
-            <li><a href="admin_edit.php">Edit Playlist</a></li>
+            <li><a href="admin_tambah.php">Add lagu</a></li>
+            <li><a href="admin_edit.php">Edit lagu</a></li>
             <li><a href="index.php">Logout</a></li>
             
             <li ><input class="btn" onclick="mode()" type="checkbox"></li>

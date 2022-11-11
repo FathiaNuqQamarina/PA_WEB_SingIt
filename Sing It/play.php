@@ -1,12 +1,17 @@
 <?php
     require('koneksi.php');
+    session_start();
+    if ( !isset($_SESSION['login'])){
+        header("Location: login.php");
+        exit;
+    }
 ?>
 
 <?php 
-    if(isset($_GET['id_playlist'])){
-        $id_playlist = $_GET['id_playlist'];
-        $hasil_playlist = mysqli_query($conn_log, "SELECT * FROM playlist WHERE id_playlist = '".$id_playlist."' ");
-        $row_playlist = mysqli_fetch_array($hasil_playlist);
+    if(isset($_GET['id_lagu'])){
+        $id_lagu = $_GET['id_lagu'];
+        $hasil_lagu = mysqli_query($conn_log, "SELECT * FROM lagu WHERE id_lagu = '".$id_lagu."' ");
+        $row_lagu = mysqli_fetch_array($hasil_lagu);
         $row_barat = 0;
         $row_indo = 0;
         $row_korea = 0;
@@ -15,7 +20,7 @@
         $id_barat = $_GET['id_barat'];
         $hasil_barat = mysqli_query($conn_log, "SELECT * FROM topbarat WHERE id_barat = '".$id_barat."' ");
         $row_barat = mysqli_fetch_array($hasil_barat);
-        $row_playlist = 0;
+        $row_lagu = 0;
         $row_indo = 0;
         $row_korea = 0;
     }
@@ -23,7 +28,7 @@
         $id_indo = $_GET['id_indo'];
         $hasil_indo = mysqli_query($conn_log, "SELECT * FROM topindo WHERE id_indo = '".$id_indo."' ");
         $row_indo = mysqli_fetch_array($hasil_indo);
-        $row_playlist = 0;
+        $row_lagu = 0;
         $row_barat = 0;
         $row_korea = 0;
     }
@@ -31,7 +36,7 @@
         $id_korea = $_GET['id_korea'];
         $hasil_korea = mysqli_query($conn_log, "SELECT * FROM topkorea WHERE id_korea = '".$id_korea."' ");
         $row_korea = mysqli_fetch_array($hasil_korea);
-        $row_playlist = 0;
+        $row_lagu = 0;
         $row_barat = 0;
         $row_indo = 0;
     }
@@ -53,11 +58,12 @@
             <div id="Belakang" onclick="ubahheader1()">It</div>
         </div>
         <ul >
+            <li><a href="home.php">Profile</a></li>
             <li><a href="home.php">Home</a></li>
+            <li><a href="user_lihat_playlist.php">Playlist</a></li>
             <li><a href="#about">About</a></li>
-            <li><a href="">Artist</a></li>
+            <li><a href="artis.php">Artist</a></li>
             <li><a href="index.php">Logout</a></li>
-            
             <li ><input class="btn" onclick="mode()" type="checkbox"></li>
         </ul>
         <div class="List-Nav-toggle">
@@ -71,8 +77,8 @@
     <div class = "container">
         <div class = "gambar">
             <img src="file/<?php 
-                if($row_playlist> 1){
-                    echo $row_playlist['Gambar'];
+                if($row_lagu> 1){
+                    echo $row_lagu['Gambar'];
                 }
                 elseif($row_barat> 1){
                     echo $row_barat['Gambar'];
@@ -88,8 +94,8 @@
         <div class = "ketlagu">
             <h4>
                 <?php 
-                    if($row_playlist> 1){
-                        echo $row_playlist['Lagu'];
+                    if($row_lagu> 1){
+                        echo $row_lagu['Lagu'];
                     }
                     elseif($row_barat> 1){
                         echo $row_barat['Lagu'];
@@ -104,8 +110,8 @@
             </h4>
             <h5>
                 <?php
-                    if($row_playlist> 1){
-                        echo $row_playlist['Penyanyi'];
+                    if($row_lagu> 1){
+                        echo $row_lagu['Penyanyi'];
                     }
                     elseif($row_barat> 1){
                         echo $row_barat['Penyanyi'];
@@ -123,8 +129,8 @@
         <div class = "playlagu">
             <audio controls>
                 <source src="file/<?php
-                        if($row_playlist> 1){
-                            echo $row_playlist['File'];
+                        if($row_lagu> 1){
+                            echo $row_lagu['File'];
                         }
                         elseif($row_barat> 1){
                             echo $row_barat['File'];

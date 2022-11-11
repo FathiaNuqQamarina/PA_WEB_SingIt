@@ -1,3 +1,11 @@
+<?php
+    session_start();
+    if ( !isset($_SESSION['login'])){
+        header("Location: login.php");
+        exit;
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,10 +45,10 @@
             <h2>Admin Sing<span> It<span></h2>
         </div>
         <div class="box">
-            <a href="admin_lihat_playlist.php">
+            <a href="admin_lihat_lagu.php">
                 <div>
                     <img src="img/pen.png" alt="song-icon" width=100px>
-                    <h3>Playlist</h3>
+                    <h3>Lagu</h3>
                 </div>
             </a>
             <a href="admin_lihat_barat.php">

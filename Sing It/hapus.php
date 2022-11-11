@@ -2,10 +2,16 @@
 
 require 'koneksi.php';
 
-if(isset($_GET['id_playlist'])){
-    $id_playlist = $_GET['id_playlist'];
-    $hapus_playlist = mysqli_query($conn_log, "DELETE FROM `playlist` WHERE `id_playlist` = '".$id_playlist."'");
-    if($hapus_playlist){
+session_start();
+    if ( !isset($_SESSION['login'])){
+        header("Location: login.php");
+        exit;
+    }
+
+if(isset($_GET['id_lagu'])){
+    $id_lagu = $_GET['id_lagu'];
+    $hapus_lagu = mysqli_query($conn_log, "DELETE FROM `lagu` WHERE `id_lagu` = '".$id_lagu."'");
+    if($hapus_lagu){
         echo '<script language = "javascript">
         alert("Hapus Berhasil"); document.location = "admin.php";</script>' ;
     }

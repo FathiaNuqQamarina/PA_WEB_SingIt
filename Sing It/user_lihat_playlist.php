@@ -6,7 +6,15 @@
         exit;
     }
 ?>
+<?php 
+    $id_user = $_SESSION['id_user'];
+    if(isset($_GET['id_lagu'])){
+        $id_lagu = $_GET['id_lagu'];
+        $id_user = $_SESSION['id_user'];
+        $sql = mysqli_query($conn_log, "INSERT INTO `playlist`(`id_user`, `id_lagu`) VALUES ('".$id_user."','".$id_lagu."')");
 
+    }
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -15,7 +23,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SingIt</title>
-    <link rel="stylesheet" href="stylesheet/style_user_lihat.css?v5">
+    <link rel="stylesheet" href="stylesheet/style_user_lihat_playlist.css?v2">
         
 </head>
 <body >
@@ -42,63 +50,50 @@
 
     </nav>
     <div class="ContentPlace">
-        <h1>Daftar Artis</h1>
-        <div>
-        <form class="box-cari" method= "get" action="">
-            <input type="text" placeholder= "Cari Artis ..." name="cari" value="<?php if(isset($_GET['cari'])){echo $_GET['cari'];} ?>">
-            <br>
-            <button type="submit"><img src="img/search.png"></button>
-        </form>  
-        </div>
-        <table>
+        <h1><?php echo $_SESSION['nama'] ?>'s Playlist</h1>
+        <table class="artis">
             <tr>
                 <th>Artis</th>
                 <th>Judul</th>
                 <th>Gambar</th>
                 <th></th>
             </tr>
-            
-            <?php 
-                include "koneksi.php";
-                if (isset($_GET['cari'])){
-                    $pencarian= $_GET['cari'];
-                    $query = "SELECT * FROM lagu WHERE Penyanyi LIKE '%".$pencarian."%'";  
-                }else{
-                    $query= "SELECT * FROM lagu";
-                }
-
-
-                $read = mysqli_query($conn_log, $query);
-                while($row = mysqli_fetch_assoc($read)){
-            ?>
             <tr>
+            <?php 
+                $lihat_playlist = mysqli_query($conn_log, "SELECT * FROM `playlist` WHERE `id_user` = '".$id_user."'");
+                while($row = mysqli_fetch_array($lihat_playlist)){
+                    $lagu = $row['id_lagu'];
+                    $query= "SELECT * FROM lagu WHERE `id_lagu` = '".$lagu."'";
+                    $read = mysqli_query($conn_log, $query);
+                    while($row = mysqli_fetch_assoc($read)){
+                ?>
                 <td><?php echo $row['Penyanyi'] ?></td>
                 <td><?php echo $row['Lagu'] ?></td>
                 <td><img src="file/<?php echo $row['Gambar']?>" alt=""></td>
                 <td>
-                    <a href="user_lihat_playlist.php?id_lagu=<?=$row['id_lagu'];?>">
-                        <img id="icon" src="img/add.png" alt="play" >
-                    </a>
-                    <br>
-                    <br>
                     <a href="play.php?id_lagu=<?=$row['id_lagu'];?>">
                         <img id ="icon" src="img/play.png" alt="play" >
                     </a>
+                    <br>
+                    <br>
+                    <a href="hapus_playlist.php?id_lagu=<?=$row['id_lagu'];?>">
+                    <img id ="icon" src="img/bin.png" alt="play" >
+                    </a>
                 </td>
             </tr>
-            <?php } ?>
+            <?php } }?>
         </table>
     </div>
     <br>
     <br>
     <br>
-
     <div id="about">
         <div>
             <h1>AboutMe</h1>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, distinctio accusantium? Aperiam qui perferendis eius odit fugit ullam dignissimos dolorum eaque! Eos veritatis provident deleniti totam amet, nemo iusto rem exercitationem alias. Sit atque accusantium omnis blanditiis ea illo eius, adipisci cupiditate assumenda eligendi fugiat? Quae quod inventore nihil magni nobis in corporis fugit maxime repellat, dolores eligendi nam obcaecati amet, iusto laborum excepturi ad porro similique? Porro illo quas ab molestias rerum. Rerum illo ipsam animi, dolores pariatur, saepe facere maxime quod, aperiam quasi harum esse quisquam sapiente perspiciatis nam porro molestiae eum asperiores soluta hic iste consequuntur fugit!</p>
         </div>
     </div>
+
     
     <footer>
         <p>Copyright. Yanuar Gideon Simalango</p>

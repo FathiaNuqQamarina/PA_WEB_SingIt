@@ -1,6 +1,10 @@
 <?php
     require('koneksi.php');
-    
+    session_start();
+    if (!isset($_SESSION['login'])){
+        header("Location: login.php");
+        exit;
+    }
 ?>
 
 <!DOCTYPE html>
@@ -18,13 +22,15 @@
         <div class="Brand">
             <div id="Depan" onclick="ubahheader()">Sing</div>
             <div id="Belakang" onclick="ubahheader1()">It</div>
+            
         </div>
         <ul >
+            <li><a href="home.php">Profile</a></li>
             <li><a href="home.php">Home</a></li>
+            <li><a href="user_lihat_playlist.php">Playlist</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="artis.php">Artist</a></li>
             <li><a href="index.php">Logout</a></li>
-            
             <li ><input class="btn" onclick="mode()" type="checkbox"></li>
         </ul>
         <div class="List-Nav-toggle">
@@ -63,20 +69,20 @@
         </div>
         <div class="containeralbum">
             <div class="artisini">
-                <a href="user_artistiara.php">
+                <a href="artis.php">
                     <div class="gambarartis" style="background-image: url(img/tiara.jfif);">
                     </div>
                 </a>
             </div>
             <div class="artisini">
-                <a href="user_artisfabio.php">
+                <a href="artis.php">
                     <div class="gambarartis" style="background-image: url(img/fabio.jfif);">
                         
                     </div>
                 </a>
             </div>
             <div class="artisini">
-                <a href="user_artismahalini.php">
+                <a href="artis.php">
                     <div class="gambarartis" style="background-image: url(img/mahalini.jfif);">
                     </div>
                 </a>
@@ -101,9 +107,9 @@
                 include "koneksi.php";
                 if (isset($_GET['cari'])){
                     $pencarian= $_GET['cari'];
-                    $query = "SELECT * FROM playlist WHERE Penyanyi LIKE '%".$pencarian."%' OR Lagu LIKE '%".$pencarian."%'";  
+                    $query = "SELECT * FROM lagu WHERE Penyanyi LIKE '%".$pencarian."%' OR Lagu LIKE '%".$pencarian."%'";  
                 }else{
-                    $query= "SELECT * FROM playlist";
+                    $query= "SELECT * FROM lagu";
                 }
 
 
@@ -115,12 +121,12 @@
                 <td><?php echo $row['Lagu'] ?></td>
                 <td><img src="file/<?php echo $row['Gambar']?>" alt=""></td>
                 <td>
-                    <a href="">
+                    <a href="user_lihat_playlist.php?id_lagu=<?=$row['id_lagu'];?>">
                         <img id="icon" src="img/add.png" alt="play" >
                     </a>
                     <br>
                     <br>
-                    <a href="play.php?id_playlist=<?=$row['id_playlist'];?>">
+                    <a href="play.php?id_lagu=<?=$row['id_lagu'];?>">
                         <img id ="icon" src="img/play.png" alt="play" >
                     </a>
                 </td>

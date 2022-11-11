@@ -1,5 +1,10 @@
 <?php
     require('koneksi.php');
+    session_start();
+    if ( !isset($_SESSION['login'])){
+        header("Location: login.php");
+        exit;
+    }
 ?>
 
 
@@ -20,11 +25,12 @@
             <div id="Belakang" onclick="ubahheader1()">It</div>
         </div>
         <ul >
+            <li><a href="home.php">Profile</a></li>
             <li><a href="home.php">Home</a></li>
+            <li><a href="user_lihat_playlist.php">Playlist</a></li>
             <li><a href="#about">About</a></li>
-            <li><a href="">Artist</a></li>
+            <li><a href="artis.php">Artist</a></li>
             <li><a href="index.php">Logout</a></li>
-            
             <li ><input class="btn" onclick="mode()" type="checkbox"></li>
         </ul>
         <div class="List-Nav-toggle">
@@ -70,11 +76,6 @@
                 <td><?php echo $row['Lagu'] ?></td>
                 <td><img src="file/<?php echo $row['Gambar']?>" alt=""></td>
                 <td>
-                    <a href="">
-                        <img id="icon" src="img/add.png" alt="play" >
-                    </a>
-                    <br>
-                    <br>
                     <a href="play.php?id_barat=<?=$row['id_barat'];?>">
                         <img id ="icon" src="img/play.png" alt="play" >
                     </a>

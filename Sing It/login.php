@@ -11,14 +11,14 @@
         }elseif(mysqli_num_rows($sql) > 0){
             while($row = mysqli_fetch_array($sql)){
                 if($row['username'] === "Admin" && $row['password'] === "Admin123"){
-                    $_SESSION['login'] = $row;
-                    echo '<script language = "javascript">
-                    alert("Login Sebagai Admin"); document.location = "admin.php";</script>' ;
+                    $_SESSION['login'] = true;
+                    header("Location: admin.php") ;
                 }
                 else{
-                    $_SESSION['login'] = $row;
-                    echo '<script language = "javascript">
-                    alert("Login Berhasil"); document.location = "home.php";</script>' ;
+                    $_SESSION['login'] = true;
+                    $_SESSION['id_user'] = $row['id_user'];
+                    $_SESSION['nama'] = $row['nama'];
+                    header("Location: home.php") ;
                 }
             }
         }

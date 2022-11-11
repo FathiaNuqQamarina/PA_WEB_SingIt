@@ -1,5 +1,10 @@
 <?php
     require('koneksi.php');
+    session_start();
+    if ( !isset($_SESSION['login'])){
+        header("Location: login.php");
+        exit;
+    }
 ?>
 
 
@@ -10,7 +15,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SingIt</title>
-    <link rel="stylesheet" href="stylesheet/style_playlist.css?v2">
+    <link rel="stylesheet" href="stylesheet/style_lagu.css?v2">
         
 </head>
 <body >
@@ -36,7 +41,7 @@
 
     </nav>
     <div class="ContentPlace">
-        <h1>Daftar Data Playlist</h1>
+        <h1>Daftar Data Lagu</h1>
         <div>
         <form class="box-cari" method= "get" action="">
             <input type="text" placeholder= "Cari Lagu ..." name="cari" value="<?php if(isset($_GET['cari'])){echo $_GET['cari'];} ?>">
