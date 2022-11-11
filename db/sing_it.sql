@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 08, 2022 at 06:12 PM
--- Server version: 10.4.21-MariaDB
--- PHP Version: 7.4.23
+-- Generation Time: Nov 11, 2022 at 03:20 PM
+-- Server version: 10.4.25-MariaDB
+-- PHP Version: 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,10 +24,37 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `lagu`
+--
+
+CREATE TABLE `lagu` (
+  `id_lagu` int(15) NOT NULL,
+  `Penyanyi` varchar(20) NOT NULL,
+  `Lagu` varchar(20) NOT NULL,
+  `File` varchar(30) NOT NULL,
+  `Gambar` varchar(255) NOT NULL,
+  `Tanggal` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `lagu`
+--
+
+INSERT INTO `lagu` (`id_lagu`, `Penyanyi`, `Lagu`, `File`, `Gambar`, `Tanggal`) VALUES
+(14, 'Tulus', 'Manusia Kuat', 'Manusia Kuat.mp3', 'Manusia Kuat.jpg', '10/11/2022 12:49:46'),
+(15, 'Lyodra', 'Pesan Terakhir', 'Pesan Terakhir.mp3', 'Pesan Terakhir.jpg', '05/11/2022 18:38:07'),
+(16, 'Tiara', 'Menjadi Dia', 'Menjadi Dia.mp3', 'Menjadi Dia.jfif', '08/11/2022 19:29:35'),
+(17, 'Mahalini', 'Sisa Rasa', 'Sisa Rasa.mp3', 'Sisa Rasa.jfif', '08/11/2022 19:51:35'),
+(19, 'Fabio', 'Rumah Singgah', 'Rumah Singgah.mp3', 'Rumah Singgah.jfif', '08/11/2022 23:00:08');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `login`
 --
 
 CREATE TABLE `login` (
+  `id_user` int(11) NOT NULL,
   `nama` varchar(30) NOT NULL,
   `username` varchar(30) NOT NULL,
   `password` varchar(20) NOT NULL
@@ -37,10 +64,10 @@ CREATE TABLE `login` (
 -- Dumping data for table `login`
 --
 
-INSERT INTO `login` (`nama`, `username`, `password`) VALUES
-('Deo', 'Yans123', 'Sims123'),
-('Admin1', 'Admin', 'Admin123'),
-('Yanuar Gideon Simalango', 'yans', 'Simalango23');
+INSERT INTO `login` (`id_user`, `nama`, `username`, `password`) VALUES
+(1, 'Deo', 'Yans123', 'Sims123'),
+(2, 'Admin1', 'Admin', 'Admin123'),
+(3, 'Yanuar Gideon Simalango', 'yans', 'Simalango23');
 
 -- --------------------------------------------------------
 
@@ -49,24 +76,18 @@ INSERT INTO `login` (`nama`, `username`, `password`) VALUES
 --
 
 CREATE TABLE `playlist` (
-  `id_playlist` int(15) NOT NULL,
-  `Penyanyi` varchar(20) NOT NULL,
-  `Lagu` varchar(20) NOT NULL,
-  `File` varchar(30) NOT NULL,
-  `Gambar` varchar(255) NOT NULL,
-  `Tanggal` varchar(20) NOT NULL
+  `id_playlist` int(30) NOT NULL,
+  `id_user` int(30) NOT NULL,
+  `id_lagu` int(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `playlist`
 --
 
-INSERT INTO `playlist` (`id_playlist`, `Penyanyi`, `Lagu`, `File`, `Gambar`, `Tanggal`) VALUES
-(14, 'Tulus', 'Manusia Kuat', 'Manusia Kuat.mp3', 'Manusia Kuat.jpg', '05/11/2022 12:53:39'),
-(15, 'Lyodra', 'Pesan Terakhir', 'Pesan Terakhir.mp3', 'Pesan Terakhir.jpg', '05/11/2022 18:38:07'),
-(16, 'Tiara', 'Menjadi Dia', 'Menjadi Dia.mp3', 'Menjadi Dia.jfif', '08/11/2022 19:29:35'),
-(17, 'Mahalini', 'Sisa Rasa', 'Sisa Rasa.mp3', 'Sisa Rasa.jfif', '08/11/2022 19:51:35'),
-(19, 'Fabio', 'Rumah Singgah', 'Rumah Singgah.mp3', 'Rumah Singgah.jfif', '08/11/2022 23:00:08');
+INSERT INTO `playlist` (`id_playlist`, `id_user`, `id_lagu`) VALUES
+(48, 3, 14),
+(49, 3, 19);
 
 -- --------------------------------------------------------
 
@@ -142,6 +163,18 @@ INSERT INTO `topkorea` (`id_korea`, `Penyanyi`, `Lagu`, `File`, `Gambar`, `Tangg
 --
 
 --
+-- Indexes for table `lagu`
+--
+ALTER TABLE `lagu`
+  ADD PRIMARY KEY (`id_lagu`);
+
+--
+-- Indexes for table `login`
+--
+ALTER TABLE `login`
+  ADD PRIMARY KEY (`id_user`);
+
+--
 -- Indexes for table `playlist`
 --
 ALTER TABLE `playlist`
@@ -170,10 +203,22 @@ ALTER TABLE `topkorea`
 --
 
 --
+-- AUTO_INCREMENT for table `lagu`
+--
+ALTER TABLE `lagu`
+  MODIFY `id_lagu` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+
+--
+-- AUTO_INCREMENT for table `login`
+--
+ALTER TABLE `login`
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT for table `playlist`
 --
 ALTER TABLE `playlist`
-  MODIFY `id_playlist` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id_playlist` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 
 --
 -- AUTO_INCREMENT for table `topbarat`
