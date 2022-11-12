@@ -13,7 +13,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SingIt</title>
-    <link rel="stylesheet" href="stylesheet/style_admin_tambah.css?v4">
+    <link rel="stylesheet" href="stylesheet/style_admin_tambah.css?v6">
         
 </head>
 <body >

@@ -59,14 +59,14 @@
             </a>
         </div>
     </div>
+
     <footer>
         <p>Copyright. Yanuar Gideon Simalango</p>
     </footer>
-    
-    
     
     <script src="script/sctipt.js">
     </script>
     
 </body>
+
 </html>

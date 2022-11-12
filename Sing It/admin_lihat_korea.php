@@ -15,7 +15,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SingIt</title>
-    <link rel="stylesheet" href="stylesheet/style_lagu.css?v2">
+    <link rel="stylesheet" href="stylesheet/style_lagu.css?v6">
         
 </head>
 <body >
@@ -100,13 +100,9 @@
             <?php } ?>
         </table>
     </div>
-    
     <footer>
         <p>Copyright. Yanuar Gideon Simalango</p>
     </footer>
-    
-    
-    
     <script src="script/sctipt.js">
     </script>
     

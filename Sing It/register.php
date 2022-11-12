@@ -7,18 +7,27 @@
         $password = $_POST['password'];
         $password_com = $_POST['password_com'];
         if ($password === $password_com){
-            $sql = mysqli_query($conn_log,"INSERT INTO `login`(`nama`, `username`, `password`) VALUES ('".$nama."','".$username."','".$password."')");
-            if ($sql == 0 ){
+            $epassword = password_hash($password, PASSWORD_DEFAULT);
+            
+            // cek username
+            $hasil = mysqli_query($conn_log, "SELECT username FROM login WHERE username = '$username'");
+            if(mysqli_fetch_assoc($hasil)){
                 echo '<script language = "javascript">
-                alert("Daftar Gagal"); document.location = "index.php";</script>' ;
-                
-            }elseif($sql > 0){
-                echo '<script language = "javascript">
-                alert("Daftar Berhasil"); document.location = "index.php";</script>' ;
+                alert("Username telah digunakan"); document.location = "register.php";</script>' ;
+            }else{
+                $sql = mysqli_query($conn_log,"INSERT INTO login(nama, username, password) VALUES ('$nama','$username','$epassword')");
+                if ($sql){
+                    echo '<script language = "javascript">
+                    alert("Daftar Berhasil"); document.location = "index.php";</script>' ;
+                    
+                }else{
+                    echo '<script language = "javascript">
+                    alert("Daftar Gagal"); document.location = "index.php";</script>' ;
+                }
             }
         }else{
             echo '<script language = "javascript">
-            alert("Password Tidak Sama"); document.location = "index.php";</script>' ;
+            alert("Password Tidak Sama"); document.location = "register.php";</script>' ;
         }
     }
 ?>

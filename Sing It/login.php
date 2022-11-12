@@ -3,26 +3,61 @@
     require('koneksi.php');
 
     if(isset($_POST['login'])){
-        $sql = mysqli_query($conn_log,"SELECT * FROM `login` WHERE `username` = '$_POST[username]' AND `password` = '$_POST[password]'");
-        if (mysqli_num_rows($sql) == 0 ){
-            echo '<script language = "javascript">
-            alert("Login Gagal"); document.location = "login.php";</script>' ;
+        $username = $_POST['username'];
+        $password = $_POST['password'];
 
-        }elseif(mysqli_num_rows($sql) > 0){
-            while($row = mysqli_fetch_array($sql)){
-                if($row['username'] === "Admin" && $row['password'] === "Admin123"){
-                    $_SESSION['login'] = true;
-                    header("Location: admin.php") ;
-                }
-                else{
-                    $_SESSION['login'] = true;
-                    $_SESSION['id_user'] = $row['id_user'];
-                    $_SESSION['nama'] = $row['nama'];
-                    header("Location: home.php") ;
-                }
+        $sql = mysqli_query($conn_log,"SELECT * FROM login WHERE username = '$username' OR password = '$password'");
+        $hitung = mysqli_num_rows($sql);
+        $pw = mysqli_fetch_array($sql);
+        $passwordsekarang = $pw['password'];
+
+        if ($hitung > 0 ){
+            //verifikasi password
+            if($pw['username'] === "Admin" && $pw['password'] === "Admin123"){
+                $_SESSION['login'] = true;
+                echo '<script language = "javascript">
+                alert("Anda Login Sebagai Admin"); document.location = "admin.php";</script>' ;
+                
+            }elseif(password_verify($password, $passwordsekarang) ){
+                $_SESSION['login'] = true;
+                $_SESSION['id_user'] = $pw['id_user'];
+                $_SESSION['nama'] = $pw['nama'];
+                echo '<script language = "javascript">
+                alert("Anda berhasil login"); document.location = "home.php";</script>' ;
+            // }
+            }else{
+                echo '<script language = "javascript">
+                alert("Password salah"); document.location = "login.php";</script>' ;
+
             }
+        }else{
+            //echo '<script language = "javascript">
+            //alert("Login Gagal"); document.location = "login.php";</script>' ;
+
         }
     }
+
+    // $sql = mysqli_query($conn_log,"SELECT * FROM `login` WHERE `username` = '$_POST[username]' AND `password` = '$_POST[password]'");
+    //     if (mysqli_num_rows($sql) == 0 ){
+    //         echo '<script language = "javascript">
+    //         alert("Login Gagal"); document.location = "login.php";</script>' ;
+
+    //     }elseif(mysqli_num_rows($sql) > 0){
+    //         while($row = mysqli_fetch_assoc($sql)){
+    //             if(password_verify($row['username'] === "Admin" && $row['password'] === "Admin123")){
+    //                 $_SESSION['login'] = true;
+    //                 echo '<script language = "javascript">
+    //                 alert("Anda Login Sebagai Admin"); document.location = "admin.php";</script>' ;
+    //             }
+    //             else{
+    //                 $_SESSION['login'] = true;
+    //                 $_SESSION['id_user'] = $row['id_user'];
+    //                 $_SESSION['nama'] = $row['nama'];
+    //                 echo '<script language = "javascript">
+    //                 alert("Login Berhasil"); document.location = "home.php";</script>' ;
+    //             }
+    //         }
+    //     }
 ?>
 
 <!DOCTYPE html>
