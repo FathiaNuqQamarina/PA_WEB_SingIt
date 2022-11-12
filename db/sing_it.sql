@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 12, 2022 at 09:16 AM
--- Server version: 10.4.21-MariaDB
--- PHP Version: 7.4.23
+-- Generation Time: Nov 12, 2022 at 01:07 PM
+-- Server version: 10.4.25-MariaDB
+-- PHP Version: 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -57,18 +57,19 @@ CREATE TABLE `login` (
   `id_user` int(11) NOT NULL,
   `nama` varchar(30) NOT NULL,
   `username` varchar(30) NOT NULL,
-  `password` varchar(300) NOT NULL
+  `password` varchar(300) NOT NULL,
+  `gambar` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `login`
 --
 
-INSERT INTO `login` (`id_user`, `nama`, `username`, `password`) VALUES
-(22, 'Admin', 'Admin', 'Admin123'),
-(23, 'Fathia', 'tia', '$2y$10$pf.jG1VvP4ygxm64jcfmw..Z1jUYloWwKNR9XK4iHvQdNjm4NySBy'),
-(24, 'Ega Sulfika', 'ega', '$2y$10$d0zeiRUPgnUPZQUE0JsZqO5X11b5IJdXXYAHlFHADdVoa/Lv3Hyb6'),
-(26, 'eva', 'eva', '$2y$10$3f9I.a3iWoguWQveZYaDYOi7YRGcdbjEf3RafMICXOYH7SFL/2zCC');
+INSERT INTO `login` (`id_user`, `nama`, `username`, `password`, `gambar`) VALUES
+(22, 'Admin', 'Admin', 'Admin123', 'noprofile.png'),
+(23, 'Fathia', 'tia', '$2y$10$pf.jG1VvP4ygxm64jcfmw..Z1jUYloWwKNR9XK4iHvQdNjm4NySBy', '23.jpg'),
+(24, 'Ega Sulfika', 'ega', '$2y$10$d0zeiRUPgnUPZQUE0JsZqO5X11b5IJdXXYAHlFHADdVoa/Lv3Hyb6', 'noprofile.png'),
+(26, 'eva', 'eva', '$2y$10$3f9I.a3iWoguWQveZYaDYOi7YRGcdbjEf3RafMICXOYH7SFL/2zCC', 'noprofile.png');
 
 -- --------------------------------------------------------
 
@@ -88,9 +89,9 @@ CREATE TABLE `playlist` (
 
 INSERT INTO `playlist` (`id_playlist`, `id_user`, `id_lagu`) VALUES
 (49, 3, 19),
-(54, 1, 15),
 (55, 21, 14),
-(56, 24, 16);
+(59, 23, 19),
+(60, 24, 16);
 
 -- --------------------------------------------------------
 
@@ -215,13 +216,13 @@ ALTER TABLE `lagu`
 -- AUTO_INCREMENT for table `login`
 --
 ALTER TABLE `login`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT for table `playlist`
 --
 ALTER TABLE `playlist`
-  MODIFY `id_playlist` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
+  MODIFY `id_playlist` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
 
 --
 -- AUTO_INCREMENT for table `topbarat`

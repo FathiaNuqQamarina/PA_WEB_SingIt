@@ -6,6 +6,7 @@
         $username = $_POST['username'];
         $password = $_POST['password'];
         $password_com = $_POST['password_com'];
+        $gambar = "noprofile.png";
         if ($password === $password_com){
             $epassword = password_hash($password, PASSWORD_DEFAULT);
             
@@ -15,7 +16,7 @@
                 echo '<script language = "javascript">
                 alert("Username telah digunakan"); document.location = "register.php";</script>' ;
             }else{
-                $sql = mysqli_query($conn_log,"INSERT INTO login(nama, username, password) VALUES ('$nama','$username','$epassword')");
+                $sql = mysqli_query($conn_log,"INSERT INTO login(nama, username, password,gambar) VALUES ('$nama','$username','$epassword','$gambar')");
                 if ($sql){
                     echo '<script language = "javascript">
                     alert("Daftar Berhasil"); document.location = "index.php";</script>' ;

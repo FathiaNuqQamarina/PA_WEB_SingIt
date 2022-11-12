@@ -25,7 +25,7 @@
             
         </div>
         <ul >
-            <li><a href="home.php">Profile</a></li>
+            <li><a href="profile.php">Profile</a></li>
             <li><a href="home.php">Home</a></li>
             <li><a href="user_lihat_playlist.php">Playlist</a></li>
             <li><a href="#about">About</a></li>
