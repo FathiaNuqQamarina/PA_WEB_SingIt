@@ -36,7 +36,7 @@
             <li><a href="profile.php">Profile</a></li>
             <li><a href="home.php">Home</a></li>
             <li><a href="user_lihat_playlist.php">Playlist</a></li>
-            <li><a href="#about">About</a></li>
+            <!-- <li><a href="#about">About</a></li> -->
             <li><a href="artis.php">Artist</a></li>
             <li><a href="index.php">Logout</a></li>
             <li ><input class="btn" onclick="mode()" type="checkbox"></li>
@@ -84,16 +84,6 @@
             <?php } }?>
         </table>
     </div>
-    <br>
-    <br>
-    <br>
-    <div id="about">
-        <div>
-            <h1>AboutMe</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, distinctio accusantium? Aperiam qui perferendis eius odit fugit ullam dignissimos dolorum eaque! Eos veritatis provident deleniti totam amet, nemo iusto rem exercitationem alias. Sit atque accusantium omnis blanditiis ea illo eius, adipisci cupiditate assumenda eligendi fugiat? Quae quod inventore nihil magni nobis in corporis fugit maxime repellat, dolores eligendi nam obcaecati amet, iusto laborum excepturi ad porro similique? Porro illo quas ab molestias rerum. Rerum illo ipsam animi, dolores pariatur, saepe facere maxime quod, aperiam quasi harum esse quisquam sapiente perspiciatis nam porro molestiae eum asperiores soluta hic iste consequuntur fugit!</p>
-        </div>
-    </div>
-
     
     <footer>
         <p>Copyright. Yanuar Gideon Simalango</p>

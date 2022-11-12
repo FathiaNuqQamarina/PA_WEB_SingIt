@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SingIt</title>
-    <link rel="stylesheet" href="stylesheet/style.css?v7">
+    <link rel="stylesheet" href="stylesheet/style.css?v9">
         
 </head>
 <body >
@@ -86,7 +86,10 @@
     <div id="about">
         <div>
             <h1>AboutMe</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, distinctio accusantium? Aperiam qui perferendis eius odit fugit ullam dignissimos dolorum eaque! Eos veritatis provident deleniti totam amet, nemo iusto rem exercitationem alias. Sit atque accusantium omnis blanditiis ea illo eius, adipisci cupiditate assumenda eligendi fugiat? Quae quod inventore nihil magni nobis in corporis fugit maxime repellat, dolores eligendi nam obcaecati amet, iusto laborum excepturi ad porro similique? Porro illo quas ab molestias rerum. Rerum illo ipsam animi, dolores pariatur, saepe facere maxime quod, aperiam quasi harum esse quisquam sapiente perspiciatis nam porro molestiae eum asperiores soluta hic iste consequuntur fugit!</p>
+            <p>Sing It merupakan sebuah website layanan pemutaran musik. Website ini dapat menampilkan serta mengelola data lagu dan data user oleh sebuah Admin, dan User dapat memutar lagu berdasarkan playlist yang dibuat, 10 top korea, 10 top indonesia dan 10 top barat. 
+                Sebelum website ini dikelola Admin harus login terlebih dahulu, sedangkan User jika belum mempunyai akun harus melakukan registrasi terlebih dahulu kemudian melakukan login. Website ini dikembangkan oleh Yanuar Gideon Simalango, Ega Sulfika dan Fathia Nuq Qamarina.
+                Mahasiswa Program Study Informatika, Fakultas Teknik, Universitas Mulawarman.
+            </p>
         </div>
     </div>
 
