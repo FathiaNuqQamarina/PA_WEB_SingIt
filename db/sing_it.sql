@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 11, 2022 at 03:20 PM
--- Server version: 10.4.25-MariaDB
--- PHP Version: 8.1.10
+-- Generation Time: Nov 12, 2022 at 09:16 AM
+-- Server version: 10.4.21-MariaDB
+-- PHP Version: 7.4.23
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -57,7 +57,7 @@ CREATE TABLE `login` (
   `id_user` int(11) NOT NULL,
   `nama` varchar(30) NOT NULL,
   `username` varchar(30) NOT NULL,
-  `password` varchar(20) NOT NULL
+  `password` varchar(300) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -65,9 +65,10 @@ CREATE TABLE `login` (
 --
 
 INSERT INTO `login` (`id_user`, `nama`, `username`, `password`) VALUES
-(1, 'Deo', 'Yans123', 'Sims123'),
-(2, 'Admin1', 'Admin', 'Admin123'),
-(3, 'Yanuar Gideon Simalango', 'yans', 'Simalango23');
+(22, 'Admin', 'Admin', 'Admin123'),
+(23, 'Fathia', 'tia', '$2y$10$pf.jG1VvP4ygxm64jcfmw..Z1jUYloWwKNR9XK4iHvQdNjm4NySBy'),
+(24, 'Ega Sulfika', 'ega', '$2y$10$d0zeiRUPgnUPZQUE0JsZqO5X11b5IJdXXYAHlFHADdVoa/Lv3Hyb6'),
+(26, 'eva', 'eva', '$2y$10$3f9I.a3iWoguWQveZYaDYOi7YRGcdbjEf3RafMICXOYH7SFL/2zCC');
 
 -- --------------------------------------------------------
 
@@ -86,8 +87,10 @@ CREATE TABLE `playlist` (
 --
 
 INSERT INTO `playlist` (`id_playlist`, `id_user`, `id_lagu`) VALUES
-(48, 3, 14),
-(49, 3, 19);
+(49, 3, 19),
+(54, 1, 15),
+(55, 21, 14),
+(56, 24, 16);
 
 -- --------------------------------------------------------
 
@@ -212,13 +215,13 @@ ALTER TABLE `lagu`
 -- AUTO_INCREMENT for table `login`
 --
 ALTER TABLE `login`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `playlist`
 --
 ALTER TABLE `playlist`
-  MODIFY `id_playlist` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
+  MODIFY `id_playlist` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 
 --
 -- AUTO_INCREMENT for table `topbarat`
