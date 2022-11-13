@@ -38,3 +38,5 @@ Website ini dapat menampilkan serta mengelola data lagu dan data user oleh sebua
   
 ![Logo Singit](https://user-images.githubusercontent.com/74334625/201530134-1e97c1e6-9ee6-479c-8c5d-761c6b47f2a6.png)
 ![home](https://user-images.githubusercontent.com/74334625/201531706-c97979d7-8fd9-44b4-89de-d9b11048eef4.jpeg)
+![home1](https://user-images.githubusercontent.com/74334625/201531890-bad33a11-ccb9-4572-a34d-dcd0d0b380e6.jpeg)
+
