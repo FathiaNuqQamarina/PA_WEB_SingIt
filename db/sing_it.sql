@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 12, 2022 at 01:07 PM
+-- Generation Time: Nov 13, 2022 at 09:49 AM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -66,10 +66,10 @@ CREATE TABLE `login` (
 --
 
 INSERT INTO `login` (`id_user`, `nama`, `username`, `password`, `gambar`) VALUES
-(22, 'Admin', 'Admin', 'Admin123', 'noprofile.png'),
-(23, 'Fathia', 'tia', '$2y$10$pf.jG1VvP4ygxm64jcfmw..Z1jUYloWwKNR9XK4iHvQdNjm4NySBy', '23.jpg'),
-(24, 'Ega Sulfika', 'ega', '$2y$10$d0zeiRUPgnUPZQUE0JsZqO5X11b5IJdXXYAHlFHADdVoa/Lv3Hyb6', 'noprofile.png'),
-(26, 'eva', 'eva', '$2y$10$3f9I.a3iWoguWQveZYaDYOi7YRGcdbjEf3RafMICXOYH7SFL/2zCC', 'noprofile.png');
+(1, 'Admin', 'Admin', 'Admin123', 'noprofile.png'),
+(2, 'Fathia', 'tia', '$2y$10$pf.jG1VvP4ygxm64jcfmw..Z1jUYloWwKNR9XK4iHvQdNjm4NySBy', 'noprofile.png'),
+(3, 'Ega Sulfika', 'ega11', '$2y$10$d0zeiRUPgnUPZQUE0JsZqO5X11b5IJdXXYAHlFHADdVoa/Lv3Hyb6', 'noprofile.png'),
+(4, 'eva', 'eva', '$2y$10$3f9I.a3iWoguWQveZYaDYOi7YRGcdbjEf3RafMICXOYH7SFL/2zCC', 'noprofile.png');
 
 -- --------------------------------------------------------
 
@@ -88,10 +88,8 @@ CREATE TABLE `playlist` (
 --
 
 INSERT INTO `playlist` (`id_playlist`, `id_user`, `id_lagu`) VALUES
-(49, 3, 19),
-(55, 21, 14),
-(59, 23, 19),
-(60, 24, 16);
+(59, 2, 19),
+(60, 3, 16);
 
 -- --------------------------------------------------------
 
@@ -182,7 +180,9 @@ ALTER TABLE `login`
 -- Indexes for table `playlist`
 --
 ALTER TABLE `playlist`
-  ADD PRIMARY KEY (`id_playlist`);
+  ADD PRIMARY KEY (`id_playlist`),
+  ADD KEY `id_user` (`id_user`),
+  ADD KEY `id_lagu` (`id_lagu`);
 
 --
 -- Indexes for table `topbarat`
@@ -241,6 +241,17 @@ ALTER TABLE `topindo`
 --
 ALTER TABLE `topkorea`
   MODIFY `id_korea` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `playlist`
+--
+ALTER TABLE `playlist`
+  ADD CONSTRAINT `playlist_Lagu` FOREIGN KEY (`id_lagu`) REFERENCES `lagu` (`id_lagu`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `playlist_Login` FOREIGN KEY (`id_user`) REFERENCES `login` (`id_user`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
