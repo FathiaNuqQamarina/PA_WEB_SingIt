@@ -17,12 +17,12 @@ Website ini dapat menampilkan serta mengelola data lagu dan data user oleh sebua
   <li> Admin dapat melakukan login dan logout</<li>
   <li> Admin dapat melihat daftar data lagu</<li>
   <li> Admin dapat menambahkan lagu baru di data lagu, top Barat , Indonesia dan Korea</<li>
-  <li> Admin dapat mengedit lagu baru di data lagu, top Barat , Indonesia dan Korea </<li>
-  <li> Admin dapat menghapus lagu baru di data lagu, top Barat , Indonesia dan Korea </<li>
+  <li> Admin dapat mengedit lagu didata lagu, top Barat , Indonesia dan Korea </<li>
+  <li> Admin dapat menghapus lagu didata lagu, top Barat , Indonesia dan Korea </<li>
   <h3> Fitur yang dapat diakses oleh <h1>User</h1></h3>
   <li> User dapat melakukan register</<li>
   <li> User dapat melakukan login dan logout</<li>
-  <li> User dapat memutar lagu dari data playlist data playlist, top Barat , Indonesia dan Korea</<li>
+  <li> User dapat memutar lagu dari data playlist, data lagu, top Barat , Indonesia dan Korea</<li>
   <li> User dapat melihat artis dan memutar lagu berdasarkan artis
 </<li>
   <li> User dapat menambahkan playlist dan menghapus playlist</<li>
