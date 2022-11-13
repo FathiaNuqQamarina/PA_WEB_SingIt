@@ -8,7 +8,7 @@
 <ul>
 <br>
 <br>
-<h2><i> SingIt <i></h2>
+<h1><i> SingIt <i></h1>
 <br>
 <p>Sing It merupakan sebuah website layanan pemutaran musik. 
 Website ini dapat menampilkan serta mengelola data lagu dan data user oleh sebuah Admin, dan User dapat memutar lagu berdasarkan playlist yang dibuat, 10 top korea, 10 top indonesia dan 10 top barat. Sebelum website ini dikelola Admin harus login terlebih dahulu, sedangkan User jika belum mempunyai akun harus melakukan registrasi terlebih dahulu kemudian melakukan login </</p>
