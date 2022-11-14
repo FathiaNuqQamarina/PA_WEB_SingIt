@@ -15,7 +15,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SingIt</title>
-    <link rel="stylesheet" href="stylesheet/style_lagu.css?v6">
+    <link rel="stylesheet" href="stylesheet/style_daftar_user.css?v5">
         
 </head>
 <body >
@@ -44,7 +44,7 @@
         <h1>Daftar Data User</h1>
         <div>
         <form class="box-cari" method= "get" action="">
-            <input type="text" placeholder= "Cari Lagu ..." name="cari" value="<?php if(isset($_GET['cari'])){echo $_GET['cari'];} ?>">
+            <input type="text" placeholder= "Cari Nama ..." name="cari" value="<?php if(isset($_GET['cari'])){echo $_GET['cari'];} ?>">
             <br>
             <button type="submit"><img src="img/search.png"></button>
         </form>  

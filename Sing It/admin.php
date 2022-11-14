@@ -40,7 +40,7 @@
     </nav>
     <div class= "bungkus">
         <div class = "walcome">
-            <h1 class = "head">DASHBOARD</h1>
+            <h1 class = "head">DASHBOARD</h1><br>
             <h3 >Selamat Datang,</h3><br>
             <h2>Admin Sing<span> It<span></h2>
         </div>

@@ -213,6 +213,16 @@ body{
         margin-bottom: 30%;
     }
 
+    .box a div img{
+        height: 25%;
+        width:  60%;
+    }
+    .box a div h3{
+        text-align: center;
+    }
+
+
+
 
 }
 
@@ -341,7 +351,7 @@ span{
 }
 
 .box a{
-    height: 65%;
+    height: 250px;
     width: 20%;
     display: flex;
     justify-content: center;
@@ -360,7 +370,7 @@ span{
 }
 
 footer{
-    background-color: #152238;
+    background-color: var(--container);
     padding-bottom: 10px;
     align-items: center;
     

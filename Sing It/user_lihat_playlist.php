@@ -23,7 +23,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SingIt</title>
-    <link rel="stylesheet" href="stylesheet/style_user_lihat_playlist.css?v2">
+    <link rel="stylesheet" href="stylesheet/style_user_lihat_playlist.css?v5">
         
 </head>
 <body >

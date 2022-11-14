@@ -180,7 +180,7 @@ body{
         flex-direction: column;
         right: 0;
         top: 0;
-        height: 100vh;
+        height: 80vh;
         align-items: center;
         justify-content: space-evenly;
         width: 70%;
@@ -211,6 +211,30 @@ body{
 
     #about{
         margin-bottom: 30%;
+    }
+
+    .form input{
+        margin-top: 10px;
+        border-radius: 10px;
+        height: 30px;
+        width: 80%;
+        text-align: center;
+        font-size: 16px;
+    }
+
+    .user-box h2{
+        font-size: 20px;
+    }
+    .lagu-box h2{
+        font-size: 20px;
+    }
+    .user-box img{
+        height: 35%;
+        width:  60%;
+    }
+    .lagu-box img{
+        height: 35%;
+        width:  60%;
     }
 
 
@@ -250,7 +274,7 @@ input{
     margin-top: 10px;
     border-radius: 10px;
     height: 30px;
-    width: 250px;
+    width: 100%;
     text-align: center;
     font-size: 16px;
 }
@@ -311,15 +335,18 @@ a{
 }
 
 .bungkus{
-    height: 78vh;
+    height: 80vh;
     width: 100%;
     display: flex;
     flex-direction: column;;
-    color: white;
+    color: var(--secondary);
 }
 
 .walcome{
-    margin-left: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 .head {
@@ -341,8 +368,8 @@ span{
 }
 
 .box a{
-    height: 65%;
-    width: 20%;
+    height: 80%;
+    width: 30%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -359,8 +386,12 @@ span{
     align-items: center;
 }
 
+footer p{
+    color: var(--secondary);
+}
+
 footer{
-    background-color: #152238;
+    background-color: var(--container);
     padding-bottom: 10px;
     align-items: center;
     

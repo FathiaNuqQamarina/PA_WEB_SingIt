@@ -15,7 +15,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SingIt</title>
-    <link rel="stylesheet" href="stylesheet/style_lagu.css?v2">
+    <link rel="stylesheet" href="stylesheet/style_lagu.css?v7">
         
 </head>
 <body >
@@ -75,12 +75,12 @@
             <tr>
                 <td><?php echo $row['Penyanyi'] ?></td>
                 <td><?php echo $row['Lagu'] ?></td>
+                <td><img src="file/<?php echo $row['Gambar']?>" alt=""></td>
                 <td><div class = "playlagu">
                 <audio controls>
                     <source src="file/<?php echo $row['File']?>" type="audio/mp3">
                 </audio>  
                 </div></td>
-                <td><img src="file/<?php echo $row['Gambar']?>" alt=""></td>
                 <td><?php echo $row['Tanggal'] ?></td>
                 <td>
                 <a href="edit.php?id_barat=<?=$row['id_barat'];?>">

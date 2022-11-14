@@ -186,12 +186,12 @@ body{
         flex-direction: column;
         right: 0;
         top: 0;
-        height: 100vh;
+        height: 80vh;
         align-items: center;
         justify-content: space-evenly;
         width: 70%;
         z-index: 1;
-        transform: translateX(110%);
+        transform: translateX(150%);
         transition: all 1s;
 
     }
@@ -218,6 +218,42 @@ body{
     #about{
         margin-bottom: 30%;
     }
+
+    th{
+        display: none;
+    }
+    td{
+        display: block;
+    }
+
+    td:first-child{
+        background-color: var(--container);
+        text-align: center;
+    }
+
+    td::before{
+        font-weight: bold;
+    }
+
+    
+
+    td:nth-child(1)::before{
+        content: "Artis";
+    }
+    td:nth-child(2)::before{
+        content: "Judul";
+    }
+
+    td{
+        border: none;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+    }
+
+
+    
 
 
 }
@@ -551,11 +587,11 @@ img{
 }
 
 footer p{
-    color: white;
+    color: var(--secondary);
 }
 
 footer{
-    background-color: #152238;
+    background-color: var(--container);
     padding-bottom: 10px;
     align-items: center;
     

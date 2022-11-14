@@ -88,51 +88,53 @@
                 </a>
             </div>
         </div>
-        <div>
-        <form class="box-cari" method= "get" action="">
-            <input type="text" placeholder= "Cari Lagu ..." name="cari" value="<?php if(isset($_GET['cari'])){echo $_GET['cari'];} ?>">
-            <br>
-            <button type="submit"><img src="img/search.png"></button>
-        </form>  
+        <div class = "box">
+            <form class="box-cari" method= "get" action="">
+                <input type="text" placeholder= "Cari Lagu ..." name="cari" value="<?php if(isset($_GET['cari'])){echo $_GET['cari'];} ?>">
+                <br>
+                <button type="submit"><img src="img/search.png"></button>
+            </form>  
         </div>
-        <table>
-            <tr>
-                <th>Artis</th>
-                <th>Judul</th>
-                <th>Gambar</th>
-                <th></th>
-            </tr>
-            
-            <?php 
-                include "koneksi.php";
-                if (isset($_GET['cari'])){
-                    $pencarian= $_GET['cari'];
-                    $query = "SELECT * FROM lagu WHERE Penyanyi LIKE '%".$pencarian."%' OR Lagu LIKE '%".$pencarian."%'";  
-                }else{
-                    $query= "SELECT * FROM lagu";
-                }
+        <div class = "table" style = "overflow-x : auto;">
+            <table>
+                <tr>
+                    <th>Artis</th>
+                    <th>Judul</th>
+                    <th>Gambar</th>
+                    <th></th>
+                </tr>
+                
+                <?php 
+                    include "koneksi.php";
+                    if (isset($_GET['cari'])){
+                        $pencarian= $_GET['cari'];
+                        $query = "SELECT * FROM lagu WHERE Penyanyi LIKE '%".$pencarian."%' OR Lagu LIKE '%".$pencarian."%'";  
+                    }else{
+                        $query= "SELECT * FROM lagu";
+                    }
 
 
-                $read = mysqli_query($conn_log, $query);
-                while($row = mysqli_fetch_assoc($read)){
-            ?>
-            <tr>
-                <td><?php echo $row['Penyanyi'] ?></td>
-                <td><?php echo $row['Lagu'] ?></td>
-                <td><img src="file/<?php echo $row['Gambar']?>" alt=""></td>
-                <td>
-                    <a href="user_lihat_playlist.php?id_lagu=<?=$row['id_lagu'];?>">
-                        <img id="icon" src="img/add.png" alt="play" >
-                    </a>
-                    <br>
-                    <br>
-                    <a href="play.php?id_lagu=<?=$row['id_lagu'];?>">
-                        <img id ="icon" src="img/play.png" alt="play" >
-                    </a>
-                </td>
-            </tr>
-            <?php } ?>
-        </table>
+                    $read = mysqli_query($conn_log, $query);
+                    while($row = mysqli_fetch_assoc($read)){
+                ?>
+                <tr>
+                    <td><?php echo $row['Penyanyi'] ?></td>
+                    <td><?php echo $row['Lagu'] ?></td>
+                    <td><img src="file/<?php echo $row['Gambar']?>" alt=""></td>
+                    <td>
+                        <a href="user_lihat_playlist.php?id_lagu=<?=$row['id_lagu'];?>">
+                            <img id="icon" src="img/add.png" alt="play" >
+                        </a>
+                        <br>
+                        <br>
+                        <a href="play.php?id_lagu=<?=$row['id_lagu'];?>">
+                            <img id ="icon" src="img/play.png" alt="play" >
+                        </a>
+                    </td>
+                </tr>
+                <?php } ?>
+            </table>
+        </div>
     </div>
     <div id="about">
         <div>

@@ -31,33 +31,13 @@
 
             }
         }else{
-            //echo '<script language = "javascript">
-            //alert("Login Gagal"); document.location = "login.php";</script>' ;
+            echo '<script language = "javascript">
+            alert("Login Gagal"); document.location = "login.php";</script>' ;
 
         }
     }
 
-    // $sql = mysqli_query($conn_log,"SELECT * FROM `login` WHERE `username` = '$_POST[username]' AND `password` = '$_POST[password]'");
-    //     if (mysqli_num_rows($sql) == 0 ){
-    //         echo '<script language = "javascript">
-    //         alert("Login Gagal"); document.location = "login.php";</script>' ;
 
-    //     }elseif(mysqli_num_rows($sql) > 0){
-    //         while($row = mysqli_fetch_assoc($sql)){
-    //             if(password_verify($row['username'] === "Admin" && $row['password'] === "Admin123")){
-    //                 $_SESSION['login'] = true;
-    //                 echo '<script language = "javascript">
-    //                 alert("Anda Login Sebagai Admin"); document.location = "admin.php";</script>' ;
-    //             }
-    //             else{
-    //                 $_SESSION['login'] = true;
-    //                 $_SESSION['id_user'] = $row['id_user'];
-    //                 $_SESSION['nama'] = $row['nama'];
-    //                 echo '<script language = "javascript">
-    //                 alert("Login Berhasil"); document.location = "home.php";</script>' ;
-    //             }
-    //         }
-    //     }
 ?>
 
 <!DOCTYPE html>
@@ -67,7 +47,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SingIt</title>
-    <link rel="stylesheet" href="stylesheet/style_login.css?v9">
+    <link rel="stylesheet" href="stylesheet/style_login.css?v2">
         
 </head>
 <body >

@@ -26,14 +26,14 @@ body{
     width: 100%;
     background-color: var(--background);
     background-size: cover;
-    background-position: right;
+    background-position: center;
 }
 
 
 .login{
     background-image: url(https://img.freepik.com/free-photo/singing-happy-caucasian-girl-s-portrait-dark-studio-background-neon-light-beautiful-female-model-with-speaker_155003-26150.jpg?w=740&t=st=1667491353~exp=1667491953~hmac=e8b04a4542f5a50efd11257d62feea44296c8cfeec88735f858d83a4aaa40c73);
     background-size: cover;
-    background-position: right;
+    background-position: center;
     justify-content: space-evenly;
     display: flex;
     flex-direction: column;
@@ -114,3 +114,18 @@ button:hover{
     text-decoration: none;
     color: #DEA057;
 }
+
+@media screen and (max-width :800px){
+    
+    .bungkus {
+        width: 300px;
+        min-height: 500px;
+        background: #FFF;
+        border-radius: 5px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+        padding: 60px 30px;
+    }
+
+
+}
+

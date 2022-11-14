@@ -187,7 +187,7 @@ body p{
         flex-direction: column;
         right: 0;
         top: 0;
-        height: 100vh;
+        height: 80vh;
         align-items: center;
         justify-content: space-evenly;
         width: 70%;
@@ -202,6 +202,10 @@ body p{
 
     .Navigator ul.slide{
         transform: translateX(0);
+    }
+
+    .gambar img{
+        height: 200px;
     }
 
 
@@ -227,4 +231,15 @@ img{
     text-align: center;
     font-size: 30px;
     color: var(--secondary);
+}
+
+footer p{
+    color: var(--secondary);
+}
+
+footer{
+    background-color: var(--container);
+    padding-bottom: 10px;
+    align-items: center;
+    
 }

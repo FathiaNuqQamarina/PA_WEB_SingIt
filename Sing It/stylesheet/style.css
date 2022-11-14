@@ -178,12 +178,12 @@ body{
         flex-direction: column;
         right: 0;
         top: 0;
-        height: 100vh;
+        height: 80vh;
         align-items: center;
         justify-content: space-evenly;
         width: 70%;
         z-index: 1;
-        transform: translateX(110%);
+        transform: translateX(150%);
         transition: all 1s;
 
     }
@@ -210,6 +210,42 @@ body{
     #about{
         margin-bottom: 30%;
     }
+
+    th{
+        display: none;
+    }
+    td{
+        display: block;
+    }
+
+    td:first-child{
+        background-color: var(--container);
+        text-align: center;
+    }
+
+    td::before{
+        font-weight: bold;
+    }
+
+    
+
+    td:nth-child(1)::before{
+        content: "Artis";
+    }
+    td:nth-child(2)::before{
+        content: "Judul";
+    }
+
+    td{
+        border: none;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+    }
+
+
+    
 
 
 }
@@ -262,16 +298,13 @@ body{
     background-repeat: no-repeat;
     position: relative;
     cursor: pointer;
-}
-
-.containeralbum .artisini{
-    align-items: center;
-    padding: 0px 80px 12px 60px; 
+    background-color: red;
 }
 
 .containeralbum .artisini .gambarartis{
     height: 45vh;
-    width: 120%;
+    width: 100%;
+    background-color: rebeccapurple;
 }
 
 h1{
@@ -379,7 +412,7 @@ button{
     align-items: center;
     display: flex;
     filter: blur(0px);
-    flex: 10;
+    flex: 9;
 }
 
 .content.active h3{
@@ -389,12 +422,6 @@ button{
     text-align: center;
 }
 
-.content input{
-    height: 450px;
-    width: 259px;
-    opacity: 100%;
-    cursor: pointer;
-}
 
 #about{
     height: 45%;
@@ -426,7 +453,6 @@ button{
 body p{
     margin-top:5% ;
     background-color: transparent;
-    /* padding-left: 10%; */
     text-align: center;
     font-size: 15px;
     color: var(--secondary);
@@ -440,18 +466,6 @@ body p{
     justify-content: center;
 }
 
-.lirik{
-    padding-top: 45px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-span{
-    color: var(--secondary);
-    text-align: center;
-}
 
 a{
     text-decoration: none;
@@ -489,17 +503,24 @@ img{
     width: 30px;
 }
 
+.box{
+    margin-top: 7%;
+    height: 10vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .box-cari{
     width:100%;
-    max-width: 700px;
-    background: rgba(255,255,255,0.2);
+    max-width: 500px;
+    background: var(--container);
     display: flex;
     border-radius: 60px;
     flex-direction: row;
     padding-left: 50px;
-    margin-left: 70%;
     margin-top: 20%;
-    padding: 0px 10px;
 
 }
 
@@ -509,13 +530,14 @@ img{
     border: 0;
     outline: none;
     font-size: 15px;
-    color: #cac7ff;
-    padding: 24px 10px;
+    color: var(--secondary);
+    padding: 10px 0px;
     text-align: left;
+    
 }
 
 ::placeholder{
-    color: #cac7ff;
+    color: var(--secondary);
 
 }
 
@@ -539,11 +561,11 @@ img{
 } */
 
 footer p{
-    color: white;
+    color: var(--secondary);
 }
 
 footer{
-    background-color: #152238;
+    background-color: var(--container);
     padding-bottom: 10px;
     align-items: center;
     

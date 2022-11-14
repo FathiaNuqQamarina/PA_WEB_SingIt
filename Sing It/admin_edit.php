@@ -13,7 +13,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SingIt</title>
-    <link rel="stylesheet" href="stylesheet/style_admin_lihat.css?v9">
+    <link rel="stylesheet" href="stylesheet/style_admin_lihat.css?v3">
         
 </head>
 <body >
@@ -41,8 +41,6 @@
     <div class= "bungkus">
         <div class = "walcome">
             <h1 class = "head">Edit Song</h1>
-            <h3 >Selamat Datang,</h3><br>
-            <h2>Admin Sing<span> It<span></h2>
         </div>
         <div class="box">
             <a href="admin_lihat_lagu.php">
