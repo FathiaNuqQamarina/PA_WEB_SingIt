@@ -473,7 +473,7 @@ a{
 }
 
 table{
-    margin-top: 50px;
+    margin-top: 20%;
 }
 
 th{
@@ -504,7 +504,6 @@ img{
 }
 
 .box{
-    margin-top: 7%;
     height: 10vh;
     width: 100%;
     display: flex;
